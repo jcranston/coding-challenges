@@ -1,0 +1,39 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Poetry & Python envs
+.env
+.venv
+*.egg-info/
+poetry.lock
+.mypy_cache/
+.pytest_cache/
+
+# Docker
+*.pid
+*.log
+
+# VSCode
+.vscode/
+
+# PyCharm
+.idea/
+
+# Emacs
+*~
+.#*
+
+# Test output
+htmlcov/
+.coverage
+
+# Pre-commit
+.pre-commit-config.yaml
+.pre-commit-hooks.yaml
+
+# Misc
+.DS_Store
+.history/
+Thumbs.db 

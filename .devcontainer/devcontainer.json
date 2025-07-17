@@ -1,0 +1,8 @@
+{
+  "name": "Python Coding Challenges",
+  "build": {
+    "dockerfile": "../docker/Dockerfile",
+    "context": "../",
+  },
+  "workspaceFolder": "/workspace"
+} 
