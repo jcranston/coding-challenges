@@ -1,6 +1,37 @@
 # Coding Problem Workspace
 
-This project provides a standardized, AI-assisted workflow for adding, solving, and documenting coding problems, including LeetCode problems and custom challenges.
+A modern, AI-assisted coding problem workspace for interview prep, algorithm mastery, and collaborative learning. This project provides:
+- A large, organized set of coding problems (including LeetCode and custom challenges)
+- Automated workflows for generating, testing, and documenting problems using AI tools (like Cursor, Copilot, or ChatGPT)
+- Scripts and context files for seamless onboarding, code quality, and reproducible practice
+- Support for dev containers, Docker, and modern Python tooling
+
+Whether you're preparing for interviews, practicing algorithms, or sharing with friends, this workspace helps you focus on learning and problem-solving—not boilerplate setup.
+
+### 🚀 Onboarding for AI Assistants (Cursor, Copilot, etc.)
+
+To load project context into your AI assistant, you have two options:
+
+1. **Copy and paste the onboarding prompt below** (the code block) into your AI agent when you open this project.
+2. **Or run:**
+   ```sh
+   make print-ai-onboarding
+   ```
+   This will print the same onboarding prompt below, which you can then copy and paste into your AI agent.
+
+**Onboarding prompt:**
+```
+Please read `ai_context/README.md` and all referenced files in `ai_context/` before assisting. Use these as your context for all workflows, code generation, and automation in this project.
+```
+
+- This ensures the AI understands all project-specific workflows, code style, and automation policies.
+- For more details, see [ai_context/README.md](ai_context/README.md).
+
+---
+
+**Note:** The checked-in codebase on GitHub includes solutions implemented by the author (jcranston) as part of his own interview prep and workflow. If you want to start fresh (with only problems and tests, no solutions or explanations), see the [Wipe Solutions Script](#-wipe-solutions-script-for-fresh-starts) below.
+
+---
 
 ## Key Features
 - **AI Context-Driven Workflow:** Use AI context files to automate and standardize problem creation, solution, testing, and documentation.
@@ -81,3 +112,29 @@ For detailed workflows and advanced usage, see [ai_context/README.md](ai_context
 ---
 
 Feel free to contribute or suggest improvements!
+
+---
+
+## 🧹 Wipe Solutions Script (For Fresh Starts)
+
+If you want to start with only the problems and tests (no solution implementations or explanations), you can use the provided script:
+
+```sh
+# Dry run (shows what would be wiped)
+python scripts/wipe_solutions.py --dry-run
+
+# Actually wipe all solution implementations (keeps docstrings, stubs out with 'pass')
+python scripts/wipe_solutions.py --yes
+
+# Also remove all EXPLANATION.md files
+python scripts/wipe_solutions.py --yes --wipe-explanations
+
+# Backup all wiped files to a .backup directory before deleting
+python scripts/wipe_solutions.py --yes --backup
+
+# Combine options as needed
+python scripts/wipe_solutions.py --yes --wipe-explanations --backup
+```
+
+> **Warning:** This is a destructive operation! Only run it if you want to start fresh.  
+> By default, the script runs in dry-run mode and will not delete or overwrite anything unless you use `--yes`.

@@ -1,4 +1,4 @@
-.PHONY: help install test lint format clean build run add-challenge quality setup-hooks pre-commit-all stats docformat problem-status
+.PHONY: help install test lint format clean build run add-challenge quality setup-hooks pre-commit-all stats docformat problem-status print-ai-onboarding
 
 help:
 	@echo "Available commands:"
@@ -17,6 +17,7 @@ help:
 	@echo "  make setup-hooks     # Install pre-commit hooks"
 	@echo "  make pre-commit-all  # Run pre-commit on all files"
 	@echo "  make stats           # Show project statistics"
+	@echo "  make print-ai-onboarding # Print AI onboarding prompt"
 
 install:
 	poetry install
@@ -86,3 +87,6 @@ docformat:
 
 problem-status:
 	python scripts/problem_status.py $(ARGS) 
+
+print-ai-onboarding:
+	@echo "Please read \`ai_context/README.md\` and all referenced files in ai_context/ before assisting. Use these as your context for all workflows, code generation, and automation in this project." 
