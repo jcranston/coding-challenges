@@ -1,4 +1,4 @@
-.PHONY: help install test lint format clean build run add-challenge quality setup-hooks pre-commit-all stats docformat
+.PHONY: help install test lint format clean build run add-challenge quality setup-hooks pre-commit-all stats docformat problem-status
 
 help:
 	@echo "Available commands:"
@@ -12,6 +12,7 @@ help:
 	@echo "  make build           # Build Docker image"
 	@echo "  make run             # Run container"
 	@echo "  make add-challenge NAME=my_new_problem  # Add a new challenge"
+	@echo "  make problem-status ARGS=\"--all\"   # Run the problem status utility with arguments"
 	@echo "  make quality         # Run format + lint + test (all quality checks)"
 	@echo "  make setup-hooks     # Install pre-commit hooks"
 	@echo "  make pre-commit-all  # Run pre-commit on all files"
@@ -82,3 +83,6 @@ stats:
 
 docformat:
 	poetry run docformatter --in-place --wrap-summaries 80 --wrap-descriptions 80 . 
+
+problem-status:
+	python scripts/problem_status.py $(ARGS) 
