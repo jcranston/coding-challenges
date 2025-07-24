@@ -1,12 +1,12 @@
 # Explanation: Reverse Vowels of a String (LeetCode 345)
 
 ## Problem Recap
-Given a string s, reverse only all the vowels in the string and return it. The vowels are 'a', 'e', 'i', 'o', and 'u', and they can appear in both lower and upper cases.
+Given a string `s`, reverse only all the vowels in the string and return it. The vowels are `'a'`, `'e'`, `'i'`, `'o'`, and `'u'`, and they can appear in both lower and upper cases.
 
 ## Approach
-- Use two pointers (left and right) to scan the string from both ends.
-- Move the left pointer forward until it finds a vowel.
-- Move the right pointer backward until it finds a vowel.
+- Use two pointers (`left` and `right`) to scan the string from both ends.
+- Move the `left` pointer forward until it finds a vowel.
+- Move the `right` pointer backward until it finds a vowel.
 - Swap the vowels at the two pointers.
 - Continue until the pointers meet.
 
@@ -18,7 +18,7 @@ Given a string s, reverse only all the vowels in the string and return it. The v
 ## Edge Cases
 - No vowels: string remains unchanged.
 - All vowels: string is fully reversed.
-- Mixed case: both 'A' and 'a' are considered vowels.
+- Mixed case: both `'A'` and `'a'` are considered vowels.
 
 ## Why Use Two Pointers?
 - Efficiently reverses only the vowels in a single pass.
