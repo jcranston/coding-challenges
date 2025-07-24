@@ -2,7 +2,10 @@
   "name": "Python Coding Challenges",
   "build": {
     "dockerfile": "../docker/Dockerfile",
-    "context": "../",
+    "context": "../"
   },
-  "workspaceFolder": "/workspace"
+  "workspaceFolder": "/workspace",
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+  ],
 } 
