@@ -21,6 +21,7 @@
 | strings/longest_palindromic_substring | 5 | Longest Palindromic Substring | strings, dynamic programming |
 | strings/group_anagrams | 49 | Group Anagrams | strings, hash table, sorting |
 | strings/find_first_unique_character | 387 | Find the First Unique Character in a String | strings, hash table, queue |
+| strings/palindromic_substrings | 647 | Palindromic Substrings | string, dynamic programming, expand around center |
 | heaps/merge_k_sorted_lists | 23 | Merge k Sorted Lists | linked list, heap, divide and conquer, merge |
 | heaps/find_median_from_data_stream | 295 | Find Median from Data Stream | heap, two heaps, data stream |
 | heaps/kth_largest_in_array | 215 | Kth Largest Element in an Array | array, heap, quickselect |
@@ -50,10 +51,14 @@
 | strings/reverse_vowels_of_a_string | 345 | Reverse Vowels of a String | strings, two pointers |
 | strings/check_if_the_sentence_is_pangram | 1832 | Check if the Sentence Is Pangram | strings, hash set |
 | math/palindrome_number | 9 | Palindrome Number | math, two pointers |
+| math/happy_number | 202 | Happy Number | math, hash set, cycle detection |
 | prefix_sum/longest_subarray_with_sum_at_most_k |  | Longest Subarray with Sum at Most K | prefix sum, deque, sliding window, array |
 | prefix_sum/subarray_sum_equals_k | 560 | Subarray Sum Equals K | array, hash table, prefix sum |
-| stacks/valid_parentheses | 20 | Valid Parentheses | stack, string |
+| stacks/valid_parentheses | 20 | Valid Parentheses | stack, string, parentheses |
+| stacks/daily_temperatures | 739 | Daily Temperatures | stack, array, monotonic stack |
+| stacks/decode_string | 394 | Decode String | stack, string, decoding |
 | design/lru_cache | 146 | LRU Cache | design, hash table, linked list, doubly linked list |
 | linked_lists/reverse_linked_list | 206 | Reverse Linked List | linked list, two pointers, recursion |
 | trie/implement_trie | 208 | Implement Trie (Prefix Tree) | trie, design, hash table, string |
 | binary_search/sqrt_x | 69 | Sqrt(x) | math, binary search | 
+| linked_lists/linked_list_cycle | 141 | Linked List Cycle | linked list, two pointers, cycle detection | 

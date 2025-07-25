@@ -37,6 +37,9 @@ Please add a new LeetCode problem, likely to be asked in an interview, from the 
 - Use this workflow when you want to practice with high-value interview problems from curated lists.
 - If you want an explanation, specify it in your prompt (e.g., "with an explanation").
 - This is an optional workflow and not the default for all new problems.
+- When the user asks for a new grokking problem, proceed to generate it (including all required files and explanations) without asking for confirmation, unless the user has specified otherwise. Do not prompt the user to say yes or no—just generate the problem.
+- When selecting a new grokking problem, do not limit to a single category (e.g., intervals). Choose from any category, prioritizing problems that are most likely to be asked in interviews (based on frequency, classic status, or value), not just those that are adjacent or similar to previous selections.
+- **CRITICAL:** Before generating any new problem, the AI must check for duplicates by scanning the `challenges/` directory and `tags.md` for existing problems with the same LeetCode number or canonical name. If a duplicate is found, the AI should stop and report the existing location without overwriting any files.
 
 ## For AI Assistants
 - Always check for a relevant context file before starting a workflow.

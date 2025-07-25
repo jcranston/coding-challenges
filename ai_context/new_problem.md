@@ -44,10 +44,16 @@ After generating README.md and solution.py for a new problem, the AI or script s
 Before generating a new problem, the AI or script must check if the problem already exists in the codebase. This must be done by:
 - Scanning the `challenges/` directory and all its subdirectories for existing problems (by canonical name, LeetCode number, or alternates).
 - Checking `tags.md` for an entry with the same LeetCode number or canonical name.
-- If a duplicate is found, the AI should not create a new problem and should report the existing location to the user.
+- If a duplicate is found, the AI should NOT create a new problem and should report the existing location to the user.
+
+**CRITICAL:** The AI must perform this check BEFORE running any generation commands. If a duplicate is found, the AI should:
+1. Stop immediately and report the existing location
+2. NOT overwrite or modify existing files
+3. Ask the user to provide a different problem name or confirm they want to proceed
 
 **Example:**
-> The problem "merge intervals" (LeetCode #56) already exists in: challenges/intervals/merge_intervals
+> The problem "valid parentheses" (LeetCode #20) already exists in: challenges/stacks/valid_parentheses
+> Please provide a different problem name or confirm you want to proceed.
 
 If the user still wants to proceed, they must confirm or provide a new name.
 
