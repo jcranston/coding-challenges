@@ -1,4 +1,4 @@
-.PHONY: help install test lint format clean build run add-challenge quality setup-hooks pre-commit-all stats docformat problem-status print-ai-onboarding
+.PHONY: help install test lint format clean build run add-challenge quality setup-hooks pre-commit-all stats docformat problem-status print-ai-onboarding audit-tags
 
 help:
 	@echo "Available commands:"
@@ -18,6 +18,7 @@ help:
 	@echo "  make pre-commit-all  # Run pre-commit on all files"
 	@echo "  make stats           # Show project statistics"
 	@echo "  make print-ai-onboarding # Print AI onboarding prompt"
+	@echo "  make audit-tags      # Run the audit_tags.py script to check for missing or extra tags"
 
 install:
 	poetry install
@@ -90,3 +91,6 @@ problem-status:
 
 print-ai-onboarding:
 	@echo "Please read \`ai_context/README.md\` and all referenced files in ai_context/ before assisting. Use these as your context for all workflows, code generation, and automation in this project." 
+
+audit-tags:
+	python scripts/audit_tags.py 

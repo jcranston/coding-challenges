@@ -34,9 +34,12 @@ LeetCode Problem: 3Sum
 - The AI/script should use a mapping table, LeetCode API, or web search to resolve user-supplied names to the correct LeetCode problem number and canonical name.
 - If a name is ambiguous or not found, the AI should ask the user for clarification or suggest possible matches.
 
-## Directory Naming
+## Directory Naming and Placement
 - The directory name can be either the canonical LeetCode name (e.g., `3sum`) or the user-supplied name (e.g., `triplet_sum_to_zero`).
 - Consistency is preferred, but flexibility is allowed as long as the README includes the canonical mapping.
+- **The problem directory must be placed in the most canonical topic subdirectory of `challenges/`, based on LeetCode's primary category for the problem (e.g., `binary_search`, `arrays`, `graphs`).**
+- If a problem fits multiple topics, always use LeetCode's primary category for directory placement, and include all relevant tags (including secondary topics) in the README and `tags.md`.
+- Do not place problems in a secondary or less canonical directory just because they have multiple tags; always use the primary category for the directory.
 
 ## Duplicate Detection
 

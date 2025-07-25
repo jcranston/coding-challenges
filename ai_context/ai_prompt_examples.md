@@ -30,6 +30,14 @@ Run the linter and all tests for the problem in arrays/maximum_subarray. Fix any
 I want to add a new dynamic programming problem and have it fully tagged, tested, and documented. Please follow all steps in ai_context/new_problem.md and ai_context/tagging_and_readme.md.
 ```
 
+### Adding a Likely Interview Problem from Grokking CSV (Optional)
+```
+Please add a new LeetCode problem, likely to be asked in an interview, from the grokking CSV. Follow all project conventions, place it in the canonical directory, and (optionally) generate a detailed EXPLANATION.md if I request it.
+```
+- Use this workflow when you want to practice with high-value interview problems from curated lists.
+- If you want an explanation, specify it in your prompt (e.g., "with an explanation").
+- This is an optional workflow and not the default for all new problems.
+
 ## For AI Assistants
 - Always check for a relevant context file before starting a workflow.
 - If the user does not specify a file, ask if there is a context file you should follow.

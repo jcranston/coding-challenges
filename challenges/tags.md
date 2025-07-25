@@ -8,6 +8,9 @@
 | arrays/longest_consecutive_sequence | 128 | Longest Consecutive Sequence | arrays, hash set, union find |
 | arrays/find_duplicate_number | 287 | Find the Duplicate Number | arrays, two pointers, binary search |
 | arrays/best_time_to_buy_and_sell_stock | 121 | Best Time to Buy and Sell Stock | arrays, dynamic programming |
+| arrays/number_of_good_pairs | 1512 | Number of Good Pairs | array, hash table, counting |
+| arrays/shortest_word_distance | 243 | Shortest Word Distance | array, two pointers |
+| arrays/3sum | 15 | 3Sum | array, two pointers, sorting |
 | sliding_window/minimum_size_subarray_sum | 209 | Minimum Size Subarray Sum | arrays, sliding window, two pointers |
 | sliding_window/longest_repeating_character_replacement | 424 | Longest Repeating Character Replacement | strings, sliding window, hash table |
 | sliding_window/sliding_window_maximum | 239 | Sliding Window Maximum | arrays, sliding window, heap, monotonic queue, deque |
@@ -33,12 +36,24 @@
 | graphs/word_ladder | 127 | Word Ladder | breadth-first search, hash table |
 | graphs/number_of_islands | 200 | Number of Islands | depth-first search, breadth-first search, union find, matrix |
 | graphs/course_schedule | 207 | Course Schedule | depth-first search, breadth-first search, graph, topological sort |
+| graphs/number_of_provinces | 547 | Number of Provinces | graph, depth-first search, breadth-first search, union find |
 | two_pointers/minimum_window_subsequence | 727 | Minimum Window Subsequence | two pointers, dynamic programming, string |
 | two_pointers/container_with_most_water | 11 | Container With Most Water | two pointers, array, greedy |
 | intervals/merge_intervals | 56 | Merge Intervals | array, sorting, intervals |
+| intervals/meeting_rooms_ii | 253 | Meeting Rooms II | intervals, heap, sorting, greedy |
+| intervals/intervals_intersection | 986 | Interval List Intersections | intervals, two pointers, array |
+| intervals/insert_interval | 57 | Insert Interval | intervals, array, merge |
+| binary_search/median_of_two_sorted_arrays | 4 | Median of Two Sorted Arrays | binary search, array, divide and conquer |
+| binary_search/binary_search_in_rotated_sorted_array | 33 | Search in Rotated Sorted Array | binary search, array |
+| binary_search/find_minimum_in_rotated_sorted_array | 153 | Find Minimum in Rotated Sorted Array | binary search, array |
+| strings/valid_palindrome | 125 | Valid Palindrome | strings, two pointers |
+| strings/reverse_vowels_of_a_string | 345 | Reverse Vowels of a String | strings, two pointers |
+| strings/check_if_the_sentence_is_pangram | 1832 | Check if the Sentence Is Pangram | strings, hash set |
+| math/palindrome_number | 9 | Palindrome Number | math, two pointers |
 | prefix_sum/longest_subarray_with_sum_at_most_k |  | Longest Subarray with Sum at Most K | prefix sum, deque, sliding window, array |
 | prefix_sum/subarray_sum_equals_k | 560 | Subarray Sum Equals K | array, hash table, prefix sum |
 | stacks/valid_parentheses | 20 | Valid Parentheses | stack, string |
 | design/lru_cache | 146 | LRU Cache | design, hash table, linked list, doubly linked list |
 | linked_lists/reverse_linked_list | 206 | Reverse Linked List | linked list, two pointers, recursion |
-| trie/implement_trie | 208 | Implement Trie (Prefix Tree) | trie, design, hash table, string | 
+| trie/implement_trie | 208 | Implement Trie (Prefix Tree) | trie, design, hash table, string |
+| binary_search/sqrt_x | 69 | Sqrt(x) | math, binary search | 

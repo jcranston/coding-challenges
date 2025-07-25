@@ -35,6 +35,9 @@ RUN ln -s /usr/bin/batcat /usr/local/bin/bat
 # Copy the rest of the code
 COPY . .
 
+# Install pre-commit and set up hooks
+RUN pip install --no-cache-dir pre-commit && pre-commit install
+
 # Add scripts directory to PATH
 ENV PATH="/workspace/scripts:$PATH"
 

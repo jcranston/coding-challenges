@@ -31,4 +31,16 @@ This directory contains guidance, templates, and prompt context files for using 
 - `explanation_generation.md`: How to generate detailed explanations for problems.
 - `problem_status_prompt.md`: How the AI should use the problem status utility script.
 
+## Problem Sources Directory
+- The `problem_sources/` directory (at the project root) is used to store CSVs, lists, or other files containing possible problems to generate or select from (e.g., curated LeetCode lists, Grokking lists).
+- This directory is for reference and curation. You can ask the AI to pick a problem from a file in this directory, or use it to track problem pools for future coding challenges.
+- Scripts and automation may not read from this directory by default, but it serves as a central place for problem source files.
+
+## Picking Likely Interview Problems from a Source List
+- If you ask the AI to "pick a likely interview problem from the grokking csv" (or similar), the AI should:
+  - Select a problem from the relevant CSV in `problem_sources/` that has **not already been generated as a challenge in the project** (i.e., not present in the `challenges/` directory).
+  - Prioritize problems that are most likely to be asked in interviews (e.g., based on frequency, classic status, or difficulty if known).
+  - The AI should not pick a problem that is already implemented in the project.
+- You can use this workflow to have the AI suggest new, high-value problems for practice or challenge generation.
+
 Feel free to add or update files as your workflow evolves! 

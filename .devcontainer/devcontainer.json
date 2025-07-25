@@ -8,4 +8,5 @@
   "mounts": [
     "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
   ],
+  "postCreateCommand": "pip install pre-commit && pre-commit install"
 } 

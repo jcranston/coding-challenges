@@ -7,12 +7,14 @@ This file describes the step-by-step process for adding a new coding problem to 
    - Use `scripts/add_challenge.sh <problem_name>` to generate the initial directory and files for the new problem.
 2. **Update `solution.py`:**
    - Add both a user solution and a canonical solution.
-   - Use descriptive function names and include docstrings.
+   - Use descriptive function names and include docstrings for all methods.
    - Use snake_case for all function arguments and variable names.
 3. **Update `test_solution.py`:**
-   - Ensure both user and canonical solutions are tested.
-   - Each test case should be in its own method.
+   - Always write out the full test file upon problem creation.
+   - Use `pytest.mark.parametrize` to define multiple test cases.
+   - Ensure both user and canonical solutions are tested in all cases.
    - Import from `.solution` (e.g., `from .solution import ...`).
+   - Do not ask the user if you should write out the test file—this is always required.
 4. **Update `README.md`:**
    - Use the following sections:
      - Problem
@@ -35,24 +37,30 @@ This file describes the step-by-step process for adding a new coding problem to 
 
 ## File Generation Workflow
 
-After generating README.md and solution.py for a new problem, the AI or script should always automatically generate test_solution.py (with test cases) and EXPLANATION.md (detailed explanation) for the problem, without asking the user for confirmation. This is the default workflow for all new problems.
-
-## Directory/Category Selection
-
-When generating a new LeetCode problem, the AI or script should automatically use the canonical LeetCode tags to determine the most appropriate directory or category for the problem. Do not ask the user to specify the category; this should be handled automatically.
+After generating README.md and solution.py for a new problem, the AI or script should always automatically generate test_solution.py (with parameterized test cases for both user and canonical solutions) and EXPLANATION.md (detailed explanation, if requested) for the problem, without asking the user for confirmation. This is the default workflow for all new problems.
 
 ## Duplicate Problem Detection
 
-Before generating a new problem, the AI or script must check if the problem already exists in the codebase (see below). The AI should perform all necessary existence checks (e.g., searching for duplicates by number, canonical name, or alternates) automatically and report the result to the user, rather than asking the user to run commands or provide additional input.
+Before generating a new problem, the AI or script must check if the problem already exists in the codebase. This must be done by:
+- Scanning the `challenges/` directory and all its subdirectories for existing problems (by canonical name, LeetCode number, or alternates).
+- Checking `tags.md` for an entry with the same LeetCode number or canonical name.
+- If a duplicate is found, the AI should not create a new problem and should report the existing location to the user.
 
 **Example:**
-> The problem "triplet sum to zero" (LeetCode #15, "3Sum") already exists in: challenges/arrays/3sum
+> The problem "merge intervals" (LeetCode #56) already exists in: challenges/intervals/merge_intervals
 
 If the user still wants to proceed, they must confirm or provide a new name.
 
+## Directory/Category Selection
+
+When generating a new LeetCode problem, the AI or script must always place the problem in the most canonical topic subdirectory of `challenges/` (e.g., `arrays`, `graphs`, `intervals`, etc.).
+- Do not create new problems at the top level of `challenges/`.
+- If the problem fits multiple topics, pick the most relevant one.
+
 ## For AI Assistants
 - Follow these steps exactly when generating or updating a problem.
-- If the user does not specify a section, use the conventions above.
+- Always write out docstrings for all solution methods and the full test file with parameterized test cases for both user and canonical solutions.
+- If the user requests an explanation, generate it immediately as part of the workflow.
 - If you are unsure about a step, ask the user or refer to other context files in `ai_context/`.
 
 ## For Users
