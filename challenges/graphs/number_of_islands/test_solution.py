@@ -34,7 +34,7 @@ test_cases = [
 ]
 
 
-@pytest.mark.parametrize("grid,expected", test_cases)
+@pytest.mark.parametrize("grid, expected", test_cases)
 def test_num_islands(grid, expected):
     for solution in [user_num_islands, canonical_num_islands]:
         assert solution([row[:] for row in grid]) == expected

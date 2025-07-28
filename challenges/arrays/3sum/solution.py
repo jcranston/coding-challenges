@@ -4,7 +4,8 @@ from typing import List
 def three_sum(nums: List[int]) -> List[List[int]]:
     """
     User-submitted solution for LeetCode 15: 3Sum.
-    Given an integer array nums, return all unique triplets [nums[i], nums[j], nums[k]]
+    Given an integer array nums, return all unique triplets [nums[i], nums[j],
+    nums[k]]
     such that i != j, i != k, j != k, and nums[i] + nums[j] + nums[k] == 0.
     The solution set must not contain duplicate triplets.
     Args:

@@ -1,8 +1,9 @@
 import pytest
 from .solution import user_sqrt_x, canonical_sqrt_x
 
+
 @pytest.mark.parametrize(
-    "x,expected",
+    "x, expected",
     [
         (0, 0),
         (1, 1),

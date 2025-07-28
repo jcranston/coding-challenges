@@ -6,11 +6,9 @@ def test_kth_largest_element():
     nums = [3, 2, 1, 5, 6, 4]
     k = 2
     expected = 5
-    # for solution in [kth_largest_element_user, kth_largest_element_canonical]:
     assert kth_largest_element(nums, k) == expected
 
     nums2 = [3, 2, 3, 1, 2, 4, 5, 5, 6]
     k2 = 4
     expected2 = 4
-    # for solution in [kth_largest_element_user, kth_largest_element_canonical]:
     assert kth_largest_element(nums2, k2) == expected2

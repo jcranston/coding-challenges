@@ -75,4 +75,52 @@ When generating a new LeetCode problem, the AI or script must always place the p
 
 ## Code Generation and Linter Requirements
 
-All code generation for new problems must follow the linter and style requirements described in [ai_context/code_generation.md](code_generation.md). 
+All code generation for new problems must follow the linter and style requirements described in [ai_context/code_generation.md](code_generation.md).
+
+## Test File Requirements
+
+When generating a new problem, always:
+
+- Create a test file that stubs out tests for both the user and canonical solution.
+- In each test, after calling the solution, check if the result is None. If so, skip the assertion (or use continue in a loop). This ensures that unimplemented (stub) solutions will not cause test failures in CI.
+- Use relative imports (from .solution import ...).
+- Only fail a test if the function is implemented and returns an incorrect result.
+- This allows you to check in many new problems/tests at once, and CI will only fail if an implementation is incorrect, not if it is missing.
+
+### Testing Multiple Methods
+
+If there are multiple methods to test (e.g., multiple user/canonical implementations, different algorithms), collect them in a global variable and use a helper method to iterate through them. This reduces code duplication and makes tests more maintainable.
+
+Example pattern:
+
+```python
+from .solution import (
+    method1_user,
+    method1_canonical,
+    method2_user,
+    method2_canonical
+)
+
+# List of all methods to test
+ALL_METHODS = [
+    method1_user,
+    method1_canonical,
+    method2_user,
+    method2_canonical
+]
+
+def assert_all_methods(input_data, expected):
+    """Helper function to test all methods with the same inputs."""
+    for method in ALL_METHODS:
+        result = method(input_data)
+        if result is None:
+            continue  # Not implemented yet
+        assert result == expected, f"Method {method.__name__} failed"
+
+def test_example():
+    input_data = None
+    expected = None
+    assert_all_methods(input_data, expected)
+```
+
+This pattern is especially useful for problems with multiple solution approaches (e.g., top-down vs bottom-up DP, different algorithms, etc.). 

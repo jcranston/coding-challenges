@@ -35,7 +35,7 @@ class Codec:
         while vals and vals[-1] == "null":
             vals.pop()
 
-        return ",".join(vals)
+        return ", ".join(vals)
 
     def deserialize(self, data: str) -> TreeNode:
         """
@@ -47,7 +47,7 @@ class Codec:
         """
         if not data:
             return None
-        vals = data.split(",")
+        vals = data.split(", ")
         root = TreeNode(int(vals[0]))
         q = deque([root])
         i = 1

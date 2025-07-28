@@ -12,6 +12,7 @@ def user_sqrt_x(x: int) -> int:
         y += 1
     return y - 1
 
+
 def canonical_sqrt_x(x: int) -> int:
     """
     Canonical solution for LeetCode 69: Sqrt(x) using binary search.

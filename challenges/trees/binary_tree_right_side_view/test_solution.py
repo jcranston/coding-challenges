@@ -32,7 +32,7 @@ def create_tree_from_list(values):
 
 
 def test_binary_tree_right_side_view_basic():
-    """Test case: [1,2,3,null,5,null,4] -> [1,3,4]"""
+    """Test case: [1, 2, 3, null, 5, null, 4] -> [1, 3, 4]"""
     values = [1, 2, 3, None, 5, None, 4]
     root = create_tree_from_list(values)
     expected = [1, 3, 4]
@@ -46,7 +46,7 @@ def test_binary_tree_right_side_view_basic():
 
 
 def test_binary_tree_right_side_view_simple():
-    """Test case: [1,null,3] -> [1,3]"""
+    """Test case: [1, null, 3] -> [1, 3]"""
     values = [1, None, 3]
     root = create_tree_from_list(values)
     expected = [1, 3]
@@ -88,7 +88,7 @@ def test_binary_tree_right_side_view_single_node():
 
 
 def test_binary_tree_right_side_view_left_skewed():
-    """Test case: [1,2,null,3] -> [1,2,3]"""
+    """Test case: [1, 2, null, 3] -> [1, 2, 3]"""
     values = [1, 2, None, 3]
     root = create_tree_from_list(values)
     expected = [1, 2, 3]
@@ -102,7 +102,7 @@ def test_binary_tree_right_side_view_left_skewed():
 
 
 def test_binary_tree_right_side_view_right_skewed():
-    """Test case: [1,null,2,null,3] -> [1,2,3]"""
+    """Test case: [1, null, 2, null, 3] -> [1, 2, 3]"""
     values = [1, None, 2, None, 3]
     root = create_tree_from_list(values)
     expected = [1, 2, 3]
@@ -116,7 +116,7 @@ def test_binary_tree_right_side_view_right_skewed():
 
 
 def test_binary_tree_right_side_view_missing_right_nodes():
-    """Test case: [1,2,null,3,4,null,null,5] -> [1,2,4,5]"""
+    """Test case: [1, 2, null, 3, 4, null, null, 5] -> [1, 2, 4, 5]"""
     values = [1, 2, None, 3, 4, None, None, 5]
     root = create_tree_from_list(values)
     expected = [1, 2, 4, 5]

@@ -11,7 +11,7 @@ solutions = [
 
 
 def test_level_order_example():
-    # Example tree: [3,9,20,null,null,15,7]
+    # Example tree: [3, 9, 20, null, null, 15, 7]
     root = TreeNode(3)
     root.left = TreeNode(9)
     root.right = TreeNode(20)

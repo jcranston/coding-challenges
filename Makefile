@@ -24,7 +24,7 @@ install:
 	poetry install
 
 test:
-	poetry run pytest
+	poetry run pytest --import-mode=importlib
 
 test-watch:
 	poetry run pytest-watch

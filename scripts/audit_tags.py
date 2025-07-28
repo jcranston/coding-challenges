@@ -1,26 +1,36 @@
 import os
 import re
 
+
 def find_problem_dirs(base_dir="challenges"):
     problem_dirs = set()
     for root, dirs, files in os.walk(base_dir):
         # Skip the tags.md file and any hidden/system files
         if root == base_dir:
             continue
+        # Skip hidden directories and pytest cache
+        dirs[:] = [d for d in dirs if not d.startswith('.') and
+                   d != '__pycache__']
         if "README.md" in files or "solution.py" in files:
             rel_path = os.path.relpath(root, base_dir)
-            if rel_path != ".":
+            if rel_path != "." and not rel_path.startswith('.pytest_cache'):
                 problem_dirs.add(rel_path.replace(os.sep, "/"))
     return problem_dirs
+
 
 def parse_tags_md(tags_path="challenges/tags.md"):
     listed_dirs = set()
     with open(tags_path) as f:
         for line in f:
+            # Skip header row and separator row
+            if (line.startswith("| Directory |") or
+                    line.startswith("|-----------")):
+                continue
             m = re.match(r"\|\s*([a-zA-Z0-9_\/-]+)\s*\|", line)
             if m:
                 listed_dirs.add(m.group(1))
     return listed_dirs
+
 
 if __name__ == "__main__":
     codebase_dirs = find_problem_dirs()
@@ -35,4 +45,4 @@ if __name__ == "__main__":
     for d in sorted(missing_in_codebase):
         print("  ", d)
     if missing_in_tags or missing_in_codebase:
-        exit(1)  # Block commit if there are discrepancies 
+        exit(1)  # Block commit if there are discrepancies

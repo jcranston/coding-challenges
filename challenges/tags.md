@@ -11,6 +11,7 @@
 | arrays/number_of_good_pairs | 1512 | Number of Good Pairs | array, hash table, counting |
 | arrays/shortest_word_distance | 243 | Shortest Word Distance | array, two pointers |
 | arrays/3sum | 15 | 3Sum | array, two pointers, sorting |
+| arrays/contains_duplicate | 217 | Contains Duplicate | array, hash table, sorting |
 | sliding_window/minimum_size_subarray_sum | 209 | Minimum Size Subarray Sum | arrays, sliding window, two pointers |
 | sliding_window/longest_repeating_character_replacement | 424 | Longest Repeating Character Replacement | strings, sliding window, hash table |
 | sliding_window/sliding_window_maximum | 239 | Sliding Window Maximum | arrays, sliding window, heap, monotonic queue, deque |
@@ -62,3 +63,4 @@
 | trie/implement_trie | 208 | Implement Trie (Prefix Tree) | trie, design, hash table, string |
 | binary_search/sqrt_x | 69 | Sqrt(x) | math, binary search | 
 | linked_lists/linked_list_cycle | 141 | Linked List Cycle | linked list, two pointers, cycle detection | 
+| template |  | Template Problem | template, example | 

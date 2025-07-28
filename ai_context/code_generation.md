@@ -2,11 +2,182 @@
 
 ## Linter and Style Requirements
 
-- All generated Python code (including stubs, tests, explanations, scripts, comments, and docstrings) must comply with flake8 linter requirements, especially:
-  - Line length must not exceed 80 characters.
-- The AI should automatically fix any linter errors in generated code before presenting or committing it, without asking the user for confirmation.
-- All variable names, function names, and code snippets in generated explanations and documentation should be rendered in monospaced/code style (using backticks in markdown).
+All generated Python code (including stubs, tests, explanations, scripts, comments, and docstrings) must comply with flake8 linter requirements. The AI should automatically fix any linter errors in generated code before presenting or committing it, without asking the user for confirmation.
 
-## Application
-- This policy applies to all code generated for new problems, solutions, tests, explanations, and project scripts.
-- Reference this file from any workflow or context file that involves code generation. 
+### Critical Linting Rules (MUST FOLLOW)
+
+**E501 - Line too long (max 80 characters):**
+- Wrap long docstrings at word boundaries, preserving semantic meaning
+- Break function signatures after opening parenthesis
+- Split long import statements across multiple lines
+- **CRITICAL**: When breaking docstrings, maintain semantic coherence - never break in the middle of a phrase or move just punctuation
+- **Example of GOOD docstring breaking:**
+```python
+def function_name():
+    """
+    Brief description that gets too long and needs to be broken
+    across multiple lines while maintaining semantic meaning.
+    """
+```
+- **Example of BAD docstring breaking (DON'T DO THIS):**
+```python
+def function_name():
+    """
+    Brief description that gets too long and needs to be broken
+    across multiple lines while maintaining semantic meaning
+    .
+    """
+```
+- **Example of function signature breaking:**
+```python
+def long_function_name(
+    param1, param2, param3, param4, param5, 
+    param6, param7, param8, param9, param10
+):
+```
+
+**E302 - Expected 2 blank lines, found 0:**
+- Add 2 blank lines after imports before function/class definitions
+- Add 2 blank lines between function/class definitions
+- Example:
+```python
+from typing import List
+
+
+def function1():
+    pass
+
+
+def function2():
+    pass
+```
+
+**E231 - Missing whitespace after comma:**
+- Add space after commas in function calls, lists, tuples
+- Example: `[1,2,3]` should be `[1, 2, 3]`
+
+**E226 - Missing whitespace around arithmetic operator:**
+- Add spaces around `+`, `-`, `*`, `/`, `//`, `%`, `**`
+- Example: `i+1` should be `i + 1`
+
+**E261 - At least two spaces before inline comment:**
+- Use at least 2 spaces before `#` comments
+- Example: `x=1#comment` should be `x = 1  # comment`
+
+**E302 - Expected 2 blank lines, found 0:**
+- Add 2 blank lines after imports and between functions/classes
+
+**W291 - Trailing whitespace:**
+- Remove trailing spaces at end of lines
+
+**W292 - No newline at end of file:**
+- Ensure files end with a newline
+
+**W293 - Blank line contains whitespace:**
+- Remove any spaces/tabs from blank lines
+
+**W503 - Line break before binary operator:**
+- Break lines after operators, not before
+
+### IMPORTANT: Avoid Automated Sed Commands for E501
+
+**CRITICAL WARNING**: When fixing E501 errors, avoid using broad automated `sed` commands that break lines at arbitrary character counts. These can create semantically broken code like:
+
+```python
+# BAD - Automated sed broke in the middle of a phrase
+"""
+The total number of good pairs (i, j) where nums[i] == nums[j] and
+i < j.
+"""
+
+# BAD - Automated sed moved just punctuation
+"""
+The total number of good pairs (i, j) where nums[i] == nums[j] and i < j
+.
+"""
+```
+
+**CORRECT APPROACH**: Manually break lines at natural word boundaries while preserving semantic meaning:
+
+```python
+# GOOD - Manual break at word boundary
+"""
+The total number of good pairs (i, j) where nums[i] == nums[j] and i < j.
+"""
+```
+
+### Code Generation Patterns
+
+**Test Data:**
+```python
+@pytest.mark.parametrize(
+    "input_data, expected",
+    [
+        ([1, 2, 3], 6),
+        ([], 0),
+        ([1], 1),
+    ]
+)
+```
+
+**Docstrings:**
+```python
+def function_name(param1: int, param2: str) -> bool:
+    """
+    Brief description of what the function does.
+    
+    Args:
+        param1: Description of first parameter
+        param2: Description of second parameter
+        
+    Returns:
+        Description of return value
+        
+    Raises:
+        ValueError: When invalid input is provided
+    """
+```
+
+**Function Signatures:**
+```python
+def long_function_name(
+    param1: List[int], 
+    param2: Optional[str] = None
+) -> Dict[str, Any]:
+```
+
+**Test Parameterization:**
+```python
+@pytest.mark.parametrize(
+    "nums, target, expected",
+    [
+        ([2, 7, 11, 15], 9, [0, 1]),
+        ([3, 2, 4], 6, [1, 2]),
+        ([3, 3], 6, [0, 1]),
+    ]
+)
+```
+
+### IMPORTANT: Avoid Automated Sed Commands
+
+- **NEVER** use automated `sed` commands to fix linting errors
+- **ALWAYS** fix issues manually to preserve necessary blank lines and formatting
+- **PRESERVE** the 2 blank lines required by E302
+- **CHECK** the `.flake8` configuration for project-specific rules
+
+### Project-Specific Configuration
+
+The project uses `.flake8` with:
+- `max-line-length = 80`
+- `extend-ignore = E203,E235,F401,F811,E741`
+
+### Application
+
+This policy applies to all code generated for:
+- New problems and solutions
+- Test files and test data
+- Documentation and explanations
+- Project scripts and utilities
+- README files and markdown content
+
+Reference this file from any workflow or context file that involves code generation. 
