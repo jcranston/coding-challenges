@@ -33,12 +33,12 @@ lint:
 	poetry run flake8 .
 
 format:
-	poetry run docformatter --in-place --wrap-summaries 80 --wrap-descriptions 80 .
+	poetry run docformatter --in-place --wrap-summaries 80 --wrap-descriptions 80 $$(find . -name "*.py" -not -path "./.venv/*" -not -path "./__pycache__/*")
 	poetry run black .
 	poetry run isort .
 
 format-check:
-	poetry run docformatter --check --wrap-summaries 80 --wrap-descriptions 80 .
+	poetry run docformatter --check --wrap-summaries 80 --wrap-descriptions 80 $$(find . -name "*.py" -not -path "./.venv/*" -not -path "./__pycache__/*")
 	poetry run black . --check
 	poetry run isort . --check-only
 
