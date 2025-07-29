@@ -94,6 +94,10 @@ When generating a new LeetCode problem, the AI or script must always place the p
 - If the user requests multiple approaches (e.g., "top-down and bottom-up"), create separate stub methods for each approach.
 - **CRITICAL: Do not automatically generate EXPLANATION.md unless explicitly requested.**
 - **CRITICAL: Before presenting any code, manually verify all lines respect the 80-character limit. This applies to function signatures, docstrings, and all other code.**
+
+**CRITICAL: ALWAYS manually count characters in docstrings and function signatures before presenting code. This is the MOST COMMON ERROR and must be caught every time.**
+
+**CRITICAL: ALWAYS check for W293 (blank line contains whitespace) before presenting code. This is the SECOND MOST COMMON ERROR. Remove any spaces/tabs from blank lines.**
 - **CRITICAL: Always place problems in their canonical topic directory (e.g., dynamic programming problems in `dynamic_programming/`).**
 - **CRITICAL: When updating tags.md, verify the exact directory path by checking the filesystem, including the topic directory.**
 - **CRITICAL: Always run `make lint` before presenting code to catch W293, E261, and other common errors.**

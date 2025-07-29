@@ -36,6 +36,7 @@
 | dynamic_programming/coin_change | 322 | Coin Change | dynamic programming, breadth-first search |
 | dynamic_programming/climbing_stairs | 70 | Climbing Stairs | dynamic programming, memoization |
 | dynamic_programming/longest_common_subsequence | 1143 | Longest Common Subsequence | dynamic programming, string, memoization, tabulation |
+| dynamic_programming/combinations | Custom | Combinations (C(n,k)) | dynamic programming, combinatorics, memoization, tabulation |
 | graphs/word_ladder | 127 | Word Ladder | breadth-first search, hash table |
 | graphs/number_of_islands | 200 | Number of Islands | depth-first search, breadth-first search, union find, matrix |
 | graphs/course_schedule | 207 | Course Schedule | depth-first search, breadth-first search, graph, topological sort |

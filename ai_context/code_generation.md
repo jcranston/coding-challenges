@@ -4,7 +4,11 @@
 
 All generated Python code (including stubs, tests, explanations, scripts, comments, and docstrings) must comply with flake8 linter requirements. The AI should automatically fix any linter errors in generated code before presenting or committing it, without asking the user for confirmation.
 
-**CRITICAL: Before presenting any code, manually verify that all lines respect the 80-character limit. Count characters or use a linter to check. This applies to function signatures, docstrings, and all other code.
+**CRITICAL: Before presenting any code, manually verify that all lines respect the 80-character limit. Count characters or use a linter to check. This applies to function signatures, docstrings, and all other code.**
+
+**CRITICAL: ALWAYS manually count characters in docstrings and function signatures before presenting code. This is the MOST COMMON ERROR and must be caught every time.**
+
+**CRITICAL: ALWAYS check for W293 (blank line contains whitespace) before presenting code. This is the SECOND MOST COMMON ERROR. Remove any spaces/tabs from blank lines.**
 
 CRITICAL: Docstring formatting expectations:
 - Multi-line docstrings should wrap at 80 characters

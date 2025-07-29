@@ -56,6 +56,7 @@ Please add a new LeetCode problem, likely to be asked in an interview, from the 
 - **CRITICAL: Always place problems in their canonical topic directory (e.g., dynamic programming problems in `dynamic_programming/`).**
 - **CRITICAL: When updating tags.md, verify the exact directory path by checking the filesystem, including the topic directory.**
 - **CRITICAL: Always run `make lint` before presenting code to catch W293, E261, and other common errors.**
+- **CRITICAL: ALWAYS check for W293 (blank line contains whitespace) before presenting code. This is the SECOND MOST COMMON ERROR. Remove any spaces/tabs from blank lines.**
 - If you are unsure about a step, ask the user or refer to the context files in this directory.
 
 ## For Users
