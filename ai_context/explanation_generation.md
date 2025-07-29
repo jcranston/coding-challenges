@@ -3,6 +3,7 @@
 ## When to Generate
 - Only generate `EXPLANATION.md` when explicitly requested by the user.
 - Do not create a blank or placeholder `EXPLANATION.md` during problem generation.
+- Do not automatically generate explanations when the user is asking questions to build intuition or understand concepts in chat.
 - Explanations can be generated for any problem, regardless of whether the canonical solution is implemented.
 
 ## What to Include in EXPLANATION.md
@@ -20,10 +21,13 @@
 - The explanation should be as detailed and educational as possible, helping the user understand not just how, but why the solution works.
 - Always reference all available material in the problem directory: README, test cases, and solution code (if present).
 - **For simple problems, keep the explanation concise and avoid unnecessary complexity or length. Cover all required sections, but do not over-explain trivial logic.**
+- **Chat discussions about building intuition should remain in chat and not automatically trigger explanation file generation.**
 
 ## Example Prompts
 - "Generate an EXPLANATION.md for this problem, referencing the README, test cases, and any existing solution. Include citations to relevant literature."
 - "Add a detailed explanation to this problem, but do not implement the canonical solution."
+- "I want to understand the intuition behind this problem" → Answer in chat, don't generate file
+- "Can you help me build intuition for the recurrence?" → Answer in chat, don't generate file
 
 ## Example File Structure
 ```
@@ -37,7 +41,8 @@ challenges/
 
 ## Workflow Summary
 - New problems always include stubs for README.md, solution.py, and test_solution.py (with full test cases).
-- EXPLANATION.md is only generated when requested, and should be comprehensive, referencing all available material and relevant literature. 
+- EXPLANATION.md is only generated when requested, and should be comprehensive, referencing all available material and relevant literature.
+- Chat discussions about problem understanding, intuition building, or concept clarification should remain in chat without generating files.
 
 ## Updating Explanations
 - If the user asks for a clarification or update to an existing EXPLANATION.md, always update the relevant EXPLANATION.md file so the clarification is persisted for future reference. Do not just answer in chat—make sure the explanation file is updated accordingly. 

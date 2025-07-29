@@ -6,12 +6,19 @@ This file contains example prompts for using AI tools (Cursor, Copilot, ChatGPT,
 - Reference the relevant context file in your prompt (e.g., "Follow the steps in ai_context/new_problem.md").
 - Be explicit about the workflow or convention you want the AI to follow.
 - If you want to automate a multi-step process, ask the AI to follow the context files step by step.
+- **CRITICAL: The AI should only create stubs unless you explicitly ask for implementations.**
 
 ## Example Prompts
 
 ### Adding a New Problem
 ```
 Please add a new problem called 'maximum_product_subarray'.
+Follow the steps in ai_context/new_problem.md and use the conventions in ai_context/tagging_and_readme.md.
+```
+
+### Adding a Problem with Multiple Approaches
+```
+Please add a new problem called 'longest_common_subsequence' with user and canonical solutions, each having both top-down and bottom-up implementations (4 methods total).
 Follow the steps in ai_context/new_problem.md and use the conventions in ai_context/tagging_and_readme.md.
 ```
 
@@ -44,6 +51,11 @@ Please add a new LeetCode problem, likely to be asked in an interview, from the 
 ## For AI Assistants
 - Always check for a relevant context file before starting a workflow.
 - If the user does not specify a file, ask if there is a context file you should follow.
+- **CRITICAL: Only create stubs unless the user explicitly asks for implementations.**
+- **CRITICAL: Before presenting any code, manually verify all lines respect the 80-character limit. This applies to function signatures, docstrings, and all other code.**
+- **CRITICAL: Always place problems in their canonical topic directory (e.g., dynamic programming problems in `dynamic_programming/`).**
+- **CRITICAL: When updating tags.md, verify the exact directory path by checking the filesystem, including the topic directory.**
+- **CRITICAL: Always run `make lint` before presenting code to catch W293, E261, and other common errors.**
 - If you are unsure about a step, ask the user or refer to the context files in this directory.
 
 ## For Users

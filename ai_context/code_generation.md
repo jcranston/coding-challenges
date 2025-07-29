@@ -4,6 +4,12 @@
 
 All generated Python code (including stubs, tests, explanations, scripts, comments, and docstrings) must comply with flake8 linter requirements. The AI should automatically fix any linter errors in generated code before presenting or committing it, without asking the user for confirmation.
 
+**CRITICAL: Before presenting any code, manually verify that all lines respect the 80-character limit. Count characters or use a linter to check. This applies to function signatures, docstrings, and all other code.**
+
+**CRITICAL: When referencing files or directories, always verify the exact path by checking the filesystem, including topic directories (e.g., `dynamic_programming/longest_common_subsequence`).**
+
+**CRITICAL: Always run the linter before presenting code to catch W293 (blank line contains whitespace), E261 (missing spaces before comments), and other common errors.**
+
 ### Critical Linting Rules (MUST FOLLOW)
 
 **E501 - Line too long (max 80 characters):**
@@ -11,6 +17,7 @@ All generated Python code (including stubs, tests, explanations, scripts, commen
 - Break function signatures after opening parenthesis
 - Split long import statements across multiple lines
 - **CRITICAL**: When breaking docstrings, maintain semantic coherence - never break in the middle of a phrase or move just punctuation
+- **CRITICAL**: Always manually verify line lengths before presenting code
 - **Example of GOOD docstring breaking:**
 ```python
 def function_name():
@@ -75,6 +82,7 @@ def function2():
 
 **W293 - Blank line contains whitespace:**
 - Remove any spaces/tabs from blank lines
+- **CRITICAL: This is a very common error when generating code**
 
 **W503 - Line break before binary operator:**
 - Break lines after operators, not before

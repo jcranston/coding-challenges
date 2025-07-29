@@ -9,12 +9,15 @@ This file describes the step-by-step process for adding a new coding problem to 
    - Add both a user solution and a canonical solution.
    - Use descriptive function names and include docstrings for all methods.
    - Use snake_case for all function arguments and variable names.
+   - **CRITICAL: Only create stubs (with `pass` statements) unless the user explicitly asks for implementations.**
+   - If the user requests multiple approaches (e.g., "top-down and bottom-up"), create separate stub methods for each approach.
 3. **Update `test_solution.py`:**
    - Always write out the full test file upon problem creation.
    - Use `pytest.mark.parametrize` to define multiple test cases.
    - Ensure both user and canonical solutions are tested in all cases.
    - Import from `.solution` (e.g., `from .solution import ...`).
    - Do not ask the user if you should write out the test file—this is always required.
+   - **CRITICAL: Test files should check for `None` results and skip assertions for unimplemented solutions.**
 4. **Update `README.md`:**
    - Use the following sections:
      - Problem
@@ -27,17 +30,24 @@ This file describes the step-by-step process for adding a new coding problem to 
    - Use clean, basic markdown formatting.
 5. **Update `tags.md`:**
    - Add an entry for the new problem: directory, LeetCode #, title, tags.
+   - **CRITICAL: Use the exact directory path as it appears in the filesystem, including the topic directory.**
+   - **CRITICAL: Verify the directory path by checking the actual directory structure before adding to tags.md.**
+   - **CRITICAL: The format should be `topic_directory/problem_name` (e.g., `dynamic_programming/longest_common_subsequence`).**
 6. **Directory Placement:**
    - Place the problem in the most canonical topic directory (e.g., `arrays`, `graphs`, etc.).
    - If the problem fits multiple topics, pick the most relevant one.
 7. **Linting:**
    - Run the linter (e.g., `flake8`) and fix any issues before committing.
+   - **CRITICAL: Always run `make lint` before presenting or committing code to catch W293, E261, and other common errors.**
+   - **CRITICAL: Fix all linting errors before committing - do not present code with linting errors.**
 8. **Commit:**
    - Commit your changes with a descriptive message.
 
 ## File Generation Workflow
 
-After generating README.md and solution.py for a new problem, the AI or script should always automatically generate test_solution.py (with parameterized test cases for both user and canonical solutions) and EXPLANATION.md (detailed explanation, if requested) for the problem, without asking the user for confirmation. This is the default workflow for all new problems.
+After generating README.md and solution.py for a new problem, the AI or script should always automatically generate test_solution.py (with parameterized test cases for both user and canonical solutions) for the problem, without asking the user for confirmation. This is the default workflow for all new problems.
+
+**CRITICAL: EXPLANATION.md should only be generated when explicitly requested by the user, not automatically during problem creation.**
 
 ## Duplicate Problem Detection
 
@@ -62,11 +72,22 @@ If the user still wants to proceed, they must confirm or provide a new name.
 When generating a new LeetCode problem, the AI or script must always place the problem in the most canonical topic subdirectory of `challenges/` (e.g., `arrays`, `graphs`, `intervals`, etc.).
 - Do not create new problems at the top level of `challenges/`.
 - If the problem fits multiple topics, pick the most relevant one.
+- **CRITICAL: Always place problems in their canonical topic directory (e.g., dynamic programming problems go in `dynamic_programming/`, array problems go in `arrays/`, etc.).**
+
+**CRITICAL: The directory name in tags.md must match the actual directory path exactly.**
+- If the problem is placed in `challenges/dynamic_programming/longest_common_subsequence/`, the tags.md entry should be `dynamic_programming/longest_common_subsequence`.
+- Always verify the exact directory path before adding to tags.md.
 
 ## For AI Assistants
 - Follow these steps exactly when generating or updating a problem.
 - Always write out docstrings for all solution methods and the full test file with parameterized test cases for both user and canonical solutions.
-- If the user requests an explanation, generate it immediately as part of the workflow.
+- **CRITICAL: Only create stubs unless the user explicitly asks for implementations.**
+- If the user requests multiple approaches (e.g., "top-down and bottom-up"), create separate stub methods for each approach.
+- **CRITICAL: Do not automatically generate EXPLANATION.md unless explicitly requested.**
+- **CRITICAL: Before presenting any code, manually verify all lines respect the 80-character limit. This applies to function signatures, docstrings, and all other code.**
+- **CRITICAL: Always place problems in their canonical topic directory (e.g., dynamic programming problems in `dynamic_programming/`).**
+- **CRITICAL: When updating tags.md, verify the exact directory path by checking the filesystem, including the topic directory.**
+- **CRITICAL: Always run `make lint` before presenting code to catch W293, E261, and other common errors.**
 - If you are unsure about a step, ask the user or refer to other context files in `ai_context/`.
 
 ## For Users
