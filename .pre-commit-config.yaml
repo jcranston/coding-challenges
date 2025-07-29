@@ -1,0 +1,13 @@
+repos:
+  - repo: local
+    hooks:
+      - id: audit-tags
+        name: Audit tags.md matches implemented problems
+        entry: python scripts/audit_tags.py
+        language: system
+        pass_filenames: false
+      - id: lint
+        name: Run flake8 linting
+        entry: make lint
+        language: system
+        pass_filenames: false 
