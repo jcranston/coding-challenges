@@ -19,8 +19,11 @@ This file describes the conventions for tagging, README formatting, and director
   - Examples
   - Constraints
   - Clarifications & Assumptions
-  - Approach
   - Notes
+- **CRITICAL: Do NOT include an "Approach" section that reveals the solution method.**
+- **CRITICAL: The goal is interview preparation - allow independent problem-solving practice.**
+- **CRITICAL: Save detailed solution explanations for EXPLANATION.md files (only when explicitly requested).**
+- **CRITICAL: The "Notes" section should provide subtle hints without revealing algorithms (e.g., "Think about how to efficiently..." rather than "Use a hash map to...").**
 - Use clean, basic markdown formatting for readability.
 
 ## Directory Structure

@@ -57,6 +57,11 @@ Please add a new LeetCode problem, likely to be asked in an interview, from the 
 - **CRITICAL: When updating tags.md, verify the exact directory path by checking the filesystem, including the topic directory.**
 - **CRITICAL: Always run `make lint` before presenting code to catch W293, E261, and other common errors.**
 - **CRITICAL: ALWAYS check for W293 (blank line contains whitespace) before presenting code. This is the SECOND MOST COMMON ERROR. Remove any spaces/tabs from blank lines.**
+- **CRITICAL: ALWAYS ensure files end with a newline (W292) and have no trailing whitespace (W291).**
+- **CRITICAL: Always create an empty `__init__.py` file in the problem directory for proper Python package structure.**
+- **CRITICAL: After creating files, run `make lint` and fix any errors before presenting the final code.**
+- **CRITICAL: The add_challenge.sh script creates directories at the root level. You MUST move them to the correct topic directory immediately.**
+- **CRITICAL: NEVER leave problems at the root level of challenges/ - always place them in their canonical topic subdirectory.**
 - If you are unsure about a step, ask the user or refer to the context files in this directory.
 
 ## For Users

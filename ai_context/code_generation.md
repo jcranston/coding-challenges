@@ -10,6 +10,27 @@ All generated Python code (including stubs, tests, explanations, scripts, commen
 
 **CRITICAL: ALWAYS check for W293 (blank line contains whitespace) before presenting code. This is the SECOND MOST COMMON ERROR. Remove any spaces/tabs from blank lines.**
 
+**CRITICAL: ALWAYS ensure files end with a newline (W292) and have no trailing whitespace (W291).**
+
+## File Creation and Formatting Requirements
+
+**CRITICAL: When creating new files, ensure proper formatting:**
+- Files must end with exactly one newline character
+- No trailing whitespace on any line
+- No spaces or tabs in blank lines
+- Proper indentation (4 spaces, not tabs)
+- Consistent spacing around operators and after commas
+
+**CRITICAL: File ending requirements:**
+- Every file must end with exactly one newline character
+- No trailing whitespace on the last line
+- Use `echo "" >> filename` or equivalent to ensure proper file endings
+
+**CRITICAL: Blank line requirements:**
+- Blank lines should contain no whitespace (spaces or tabs)
+- Use `sed -i 's/[[:space:]]*$//' filename` to remove trailing whitespace
+- Check for W293 errors before presenting code
+
 CRITICAL: Docstring formatting expectations:
 - Multi-line docstrings should wrap at 80 characters
 - First line should be a brief summary

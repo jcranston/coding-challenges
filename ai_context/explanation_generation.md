@@ -5,6 +5,9 @@
 - Do not create a blank or placeholder `EXPLANATION.md` during problem generation.
 - Do not automatically generate explanations when the user is asking questions to build intuition or understand concepts in chat.
 - Explanations can be generated for any problem, regardless of whether the canonical solution is implemented.
+- **CRITICAL: README files are for practice - they should NOT include detailed solution approaches.**
+- **CRITICAL: EXPLANATION.md files are for learning - they SHOULD include detailed approaches and algorithms.**
+- **CRITICAL: The distinction is important for interview preparation - READMEs allow independent problem-solving, EXPLANATION.mds provide detailed guidance.**
 
 ## What to Include in EXPLANATION.md
 - **Problem Recap (first section):** Start with a brief summary of the problem in your own words, referencing the README and clarifying the main task and constraints.

@@ -5,6 +5,8 @@ This file describes the step-by-step process for adding a new coding problem to 
 ## Steps
 1. **Run the Script:**
    - Use `scripts/add_challenge.sh <problem_name>` to generate the initial directory and files for the new problem.
+   - **CRITICAL: The script will create the directory at the root level of challenges/. You MUST move it to the correct topic directory immediately.**
+   - **CRITICAL: After running the script, manually move the created directory to the appropriate topic subdirectory (e.g., `mv challenges/problem_name challenges/sliding_window/problem_name`).**
 2. **Update `solution.py`:**
    - Add both a user solution and a canonical solution.
    - Use descriptive function names and include docstrings for all methods.
@@ -24,10 +26,13 @@ This file describes the step-by-step process for adding a new coding problem to 
      - Examples
      - Constraints
      - Clarifications & Assumptions
-     - Approach
      - Notes
    - Add the LeetCode number and tags at the top (if applicable).
    - Use clean, basic markdown formatting.
+   - **CRITICAL: Do NOT include an "Approach" section that gives away the solution method.**
+   - **CRITICAL: The goal is to allow independent problem-solving practice for interview preparation.**
+   - **CRITICAL: Save detailed solution explanations for EXPLANATION.md files (only when explicitly requested).**
+   - **CRITICAL: The "Notes" section should provide hints without revealing the algorithm (e.g., "Think about how to efficiently track..." rather than "Use a hash map to track...").**
 5. **Update `tags.md`:**
    - Add an entry for the new problem: directory, LeetCode #, title, tags.
    - **CRITICAL: Use the exact directory path as it appears in the filesystem, including the topic directory.**
@@ -36,7 +41,13 @@ This file describes the step-by-step process for adding a new coding problem to 
 6. **Directory Placement:**
    - Place the problem in the most canonical topic directory (e.g., `arrays`, `graphs`, etc.).
    - If the problem fits multiple topics, pick the most relevant one.
-7. **Linting:**
+   - **CRITICAL: NEVER leave problems at the root level of challenges/.**
+   - **CRITICAL: Always move problems to their canonical topic directory immediately after creation.**
+7. **Required Files:**
+   - **CRITICAL: Ensure `__init__.py` exists in the problem directory to make it a proper Python package.**
+   - **CRITICAL: The `__init__.py` file should be empty (no content, just a newline if needed).**
+   - This is required for relative imports in test files to work correctly.
+8. **Linting:**
    - Run the linter (e.g., `flake8`) and fix any issues before committing.
    - **CRITICAL: Always run `make lint` before presenting or committing code to catch W293, E261, and other common errors.
 
@@ -48,7 +59,7 @@ CRITICAL: Code formatting expectations for generated files:
 - Break long lines at logical points (operators, commas)
 - Follow the formatting patterns shown in existing files after `make format`**
    - **CRITICAL: Fix all linting errors before committing - do not present code with linting errors.**
-8. **Commit:**
+9. **Commit:**
    - **CRITICAL: Do not automatically create commits unless the user explicitly asks for them.**
    - When the user asks for a commit, use a descriptive message.
 

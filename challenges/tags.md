@@ -18,6 +18,7 @@
 | sliding_window/minimum_window_substring | 76 | Minimum Window Substring | strings, sliding window, hash table, two pointers |
 | sliding_window/longest_substring_without_repeating_characters | 3 | Longest Substring Without Repeating Characters | strings, sliding window, hash table |
 | sliding_window/find_all_anagrams_in_a_string | 438 | Find All Anagrams in a String | strings, sliding window, hash table |
+| sliding_window/longest_substring_with_k_distinct_characters | 340 | Longest Substring with At Most K Distinct Characters | string, sliding window, hash table, two pointers |
 | strings/valid_anagram | 242 | Valid Anagram | strings, hash table, sorting |
 | strings/longest_palindromic_substring | 5 | Longest Palindromic Substring | strings, dynamic programming |
 | strings/group_anagrams | 49 | Group Anagrams | strings, hash table, sorting |

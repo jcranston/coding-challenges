@@ -34,6 +34,35 @@ This file lists common issues and troubleshooting steps for using AI tools (Curs
   - Check `ai_context/scripts_usage.md` for the latest script usage.
   - Update scripts or this file if workflows change.
 
+### 7. Linting Errors in Generated Files
+- **Common Issues:**
+  - W293: Blank line contains whitespace
+  - W291: Trailing whitespace
+  - W292: No newline at end of file
+  - E501: Line too long (over 80 characters)
+- **Solution:**
+  - Always run `make lint` after generating files
+  - Use `sed -i 's/[[:space:]]*$//' filename` to remove trailing whitespace
+  - Ensure files end with exactly one newline character
+  - Manually verify line lengths before presenting code
+
+### 8. Import Errors in Test Files
+- **Common Issue:** `ImportError: attempted relative import with no known parent package`
+- **Solution:**
+  - Always create an empty `__init__.py` file in the problem directory
+  - Ensure the directory structure is a proper Python package
+  - Use relative imports (`from .solution import ...`) in test files
+
+### 9. File Formatting Issues
+- **Common Issues:**
+  - Trailing whitespace on lines
+  - Missing newline at end of file
+  - Spaces in blank lines
+- **Solution:**
+  - Use proper text editors or tools to ensure clean formatting
+  - Run `make lint` and fix all errors before presenting code
+  - Follow the formatting requirements in `ai_context/code_generation.md`
+
 ## For AI Assistants
 - If you encounter an issue not listed here, ask the user for clarification or suggest updating this file.
 
