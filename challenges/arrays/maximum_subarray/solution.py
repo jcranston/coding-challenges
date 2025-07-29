@@ -2,9 +2,8 @@ from typing import List, Tuple
 
 
 def max_subarray_with_indices(nums: List[int]) -> Tuple[int, List[int]]:
-    """
-    Returns the maximum sum of a contiguous subarray and the subarray itself.
-    """
+    """Returns the maximum sum of a contiguous subarray and the subarray
+    itself."""
     if not nums:
         return 0, []
 

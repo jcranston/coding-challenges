@@ -3,8 +3,8 @@ from typing import Counter
 
 
 def top_k_frequent_elements_user(nums, k):
-    """
-    User-submitted solution for the Top K Frequent Elements problem.
+    """User-submitted solution for the Top K Frequent Elements problem.
+
     Args:
         nums (List[int]): The input array.
         k (int): The number of most frequent elements to return.
@@ -21,9 +21,9 @@ def top_k_frequent_elements_user(nums, k):
 
 
 def top_k_frequent_elements_canonical(nums, k):
-    """
-    Canonical solution for the Top K Frequent Elements problem (reference
+    """Canonical solution for the Top K Frequent Elements problem (reference
     implementation).
+
     Args:
         nums (List[int]): The input array.
         k (int): The number of most frequent elements to return.

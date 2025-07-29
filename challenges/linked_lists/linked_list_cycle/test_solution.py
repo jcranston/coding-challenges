@@ -1,5 +1,6 @@
 import pytest
-from .solution import has_cycle, canonical_has_cycle, ListNode
+
+from .solution import ListNode, canonical_has_cycle, has_cycle
 
 
 def build_linked_list(values, pos):
@@ -23,7 +24,7 @@ def build_linked_list(values, pos):
         ([], -1, False),
         ([1, 2, 3, 4, 5], -1, False),
         ([1, 2, 3, 4, 5], 2, True),
-    ]
+    ],
 )
 def test_has_cycle(values, pos, expected):
     head = build_linked_list(values, pos)

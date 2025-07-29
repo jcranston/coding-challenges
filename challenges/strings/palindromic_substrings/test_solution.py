@@ -1,6 +1,8 @@
 import pytest
+
 from .solution import (
-    count_palindromic_substrings, canonical_count_palindromic_substrings
+    canonical_count_palindromic_substrings,
+    count_palindromic_substrings,
 )
 
 
@@ -14,11 +16,12 @@ from .solution import (
         ("abba", 6),
         ("abcd", 4),
         ("", 0),
-    ]
+    ],
 )
 def test_count_palindromic_substrings(s, expected):
     for solution in [
-        count_palindromic_substrings, canonical_count_palindromic_substrings
+        count_palindromic_substrings,
+        canonical_count_palindromic_substrings,
     ]:
         result = solution(s)
         if result is None:

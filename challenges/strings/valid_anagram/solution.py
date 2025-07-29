@@ -2,8 +2,7 @@ from collections import defaultdict
 
 
 def valid_anagram(s: str, t: str) -> bool:
-    """
-    Returns True if t is an anagram of s, False otherwise.
+    """Returns True if t is an anagram of s, False otherwise.
 
     Args:
         s: The first input string.

@@ -3,8 +3,7 @@ from typing import List
 
 
 def group_anagrams(strs: List[str]) -> List[List[str]]:
-    """
-    Groups anagrams together from a list of strings.
+    """Groups anagrams together from a list of strings.
 
     Args:
         strs: A list of strings consisting of lowercase English letters.

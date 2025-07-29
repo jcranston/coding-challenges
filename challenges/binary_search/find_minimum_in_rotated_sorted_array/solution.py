@@ -2,8 +2,7 @@ from typing import List
 
 
 def find_minimum_in_rotated_sorted_array(nums: List[int]) -> int:
-    """
-    Returns the minimum element in a rotated sorted array.
+    """Returns the minimum element in a rotated sorted array.
 
     Args:
         nums: A list of unique integers representing a rotated sorted array.

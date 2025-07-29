@@ -1,9 +1,10 @@
-"""
-Pytest configuration for the workspace root.
+"""Pytest configuration for the workspace root.
+
 This file helps pytest discover tests and handle relative imports properly.
 """
-import sys
+
 import os
+import sys
 from pathlib import Path
 
 # Add the workspace root and challenges directory to sys.path for test imports

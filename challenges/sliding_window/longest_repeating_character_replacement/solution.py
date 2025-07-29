@@ -2,9 +2,9 @@ from collections import defaultdict
 
 
 def longest_repeating_character_replacement(s, k):
-    """
-    Returns the length of the longest substring containing the same letter
+    """Returns the length of the longest substring containing the same letter
     after at most k replacements.
+
     Args:
         s (str): The input string.
         k (int): The maximum number of replacements allowed.

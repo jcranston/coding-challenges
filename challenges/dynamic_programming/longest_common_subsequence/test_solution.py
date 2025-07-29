@@ -1,16 +1,16 @@
-"""
-Tests for Longest Common Subsequence solutions.
+"""Tests for Longest Common Subsequence solutions.
 
-This module tests both user and canonical implementations using
-top-down and bottom-up dynamic programming approaches.
+This module tests both user and canonical implementations using top-down and
+bottom-up dynamic programming approaches.
 """
 
 import pytest
+
 from .solution import (
-    longest_common_subsequence_user_top_down,
-    longest_common_subsequence_user_bottom_up,
+    longest_common_subsequence_canonical_bottom_up,
     longest_common_subsequence_canonical_top_down,
-    longest_common_subsequence_canonical_bottom_up
+    longest_common_subsequence_user_bottom_up,
+    longest_common_subsequence_user_top_down,
 )
 
 # List of all methods to test
@@ -18,7 +18,7 @@ ALL_METHODS = [
     longest_common_subsequence_user_top_down,
     longest_common_subsequence_user_bottom_up,
     longest_common_subsequence_canonical_top_down,
-    longest_common_subsequence_canonical_bottom_up
+    longest_common_subsequence_canonical_bottom_up,
 ]
 
 
@@ -42,7 +42,7 @@ def assert_all_methods(text1: str, text2: str, expected: int):
         ("", "a", 0),
         ("abcba", "abcbcba", 5),
         ("pmjghexybyrgzczy", "hafcdqbgncrcbihkd", 4),
-    ]
+    ],
 )
 def test_longest_common_subsequence(text1: str, text2: str, expected: int):
     """Test all LCS methods with various input combinations."""

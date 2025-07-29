@@ -1,6 +1,5 @@
 def longest_substring_without_repeating_chars_brute_force(s: str) -> int:
-    """
-    Returns the length of the longest substring without repeating characters.
+    """Returns the length of the longest substring without repeating characters.
 
     Args:
         s: The input string.
@@ -22,8 +21,7 @@ def longest_substring_without_repeating_chars_brute_force(s: str) -> int:
 
 
 def longest_substring_without_repeating_chars_optimized(s: str) -> int:
-    """
-    Returns the length of the longest substring without repeating characters.
+    """Returns the length of the longest substring without repeating characters.
 
     Args:
         s: The input string.

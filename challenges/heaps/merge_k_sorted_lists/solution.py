@@ -8,8 +8,8 @@ class ListNode:
 
 
 def merge_k_sorted_lists(lists):
-    """
-    Merges k sorted linked lists into one sorted linked list.
+    """Merges k sorted linked lists into one sorted linked list.
+
     Args:
         lists (List[ListNode]): List of ListNode heads, each representing a
         sorted linked list.

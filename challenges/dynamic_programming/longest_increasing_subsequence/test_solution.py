@@ -15,7 +15,7 @@ def test_basic_case_quadratic():
         assert length == expected_length
         # Verify the sequence is actually increasing
         for i in range(1, len(sequence)):
-            assert sequence[i] > sequence[i-1]
+            assert sequence[i] > sequence[i - 1]
 
 
 def test_basic_case_optimized():
@@ -27,7 +27,7 @@ def test_basic_case_optimized():
         assert length == expected_length
         # Verify the sequence is actually increasing
         for i in range(1, len(sequence)):
-            assert sequence[i] > sequence[i-1]
+            assert sequence[i] > sequence[i - 1]
 
 
 def test_strictly_increasing_quadratic():
@@ -119,7 +119,7 @@ def test_small_array_quadratic():
         assert length == expected_length
         # Verify the sequence is actually increasing
         for i in range(1, len(sequence)):
-            assert sequence[i] > sequence[i-1]
+            assert sequence[i] > sequence[i - 1]
 
 
 def test_small_array_optimized():
@@ -131,4 +131,4 @@ def test_small_array_optimized():
         assert length == expected_length
         # Verify the sequence is actually increasing
         for i in range(1, len(sequence)):
-            assert sequence[i] > sequence[i-1]
+            assert sequence[i] > sequence[i - 1]

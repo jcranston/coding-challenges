@@ -3,10 +3,8 @@ from typing import List
 
 
 def merge_intervals_deque(intervals: List[List[int]]) -> List[List[int]]:
-    """
-    Merges all overlapping intervals in a list using a deque-based approach and
-    returns a list of non-overlapping intervals.
-    """
+    """Merges all overlapping intervals in a list using a deque-based approach
+    and returns a list of non-overlapping intervals."""
     if not intervals:
         return []
     intervals.sort(key=lambda x: x[0])
@@ -26,10 +24,8 @@ def merge_intervals_deque(intervals: List[List[int]]) -> List[List[int]]:
 
 
 def merge_intervals(intervals: List[List[int]]) -> List[List[int]]:
-    """
-    Merges all overlapping intervals in a list and returns a list of
-    non-overlapping intervals (standard approach).
-    """
+    """Merges all overlapping intervals in a list and returns a list of non-
+    overlapping intervals (standard approach)."""
     if not intervals:
         return []
     intervals.sort(key=lambda x: x[0])

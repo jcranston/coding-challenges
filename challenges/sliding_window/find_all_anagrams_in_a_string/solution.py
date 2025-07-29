@@ -3,8 +3,9 @@ from typing import List
 
 
 def find_all_anagrams_user(s: str, p: str) -> List[int]:
-    """
-    User-submitted solution for finding all start indices of p's anagrams in s.
+    """User-submitted solution for finding all start indices of p's anagrams in
+    s.
+
     Args:
         s (str): The source string.
         p (str): The target string whose anagrams to find in s.
@@ -36,9 +37,9 @@ def find_all_anagrams_user(s: str, p: str) -> List[int]:
 
 
 def find_all_anagrams_canonical(s: str, p: str) -> List[int]:
-    """
-    Canonical solution for finding all start indices of p's anagrams in s using
-    a sliding window and fixed-size arrays for character counts.
+    """Canonical solution for finding all start indices of p's anagrams in s
+    using a sliding window and fixed-size arrays for character counts.
+
     Args:
         s (str): The source string.
         p (str): The target string whose anagrams to find in s.

@@ -10,8 +10,7 @@ class ListNode:
 
 
 def reverse_linked_list(head: Optional[ListNode]) -> Optional[ListNode]:
-    """
-    Reverses a singly linked list.
+    """Reverses a singly linked list.
 
     Args:
         head: The head node of the singly linked list.

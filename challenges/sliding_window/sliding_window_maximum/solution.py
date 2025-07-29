@@ -2,9 +2,9 @@ from collections import deque
 
 
 def sliding_window_maximum(nums, k):
-    """
-    Returns the maximum value in each sliding window of size k as it moves
+    """Returns the maximum value in each sliding window of size k as it moves
     from left to right across the array.
+
     Args:
         nums (List[int]): The input array.
         k (int): The window size.

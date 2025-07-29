@@ -10,8 +10,8 @@ class TreeNode:
 
 class Codec:
     def serialize(self, root: TreeNode) -> str:
-        """
-        Encodes a tree to a single string.
+        """Encodes a tree to a single string.
+
         Args:
             root (TreeNode): The root of the binary tree.
         Returns:
@@ -38,8 +38,8 @@ class Codec:
         return ", ".join(vals)
 
     def deserialize(self, data: str) -> TreeNode:
-        """
-        Decodes your encoded data to tree.
+        """Decodes your encoded data to tree.
+
         Args:
             data (str): The serialized string representation of the tree.
         Returns:

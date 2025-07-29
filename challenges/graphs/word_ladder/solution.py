@@ -3,8 +3,8 @@ from collections import deque
 
 
 def word_ladder_user(begin_word, end_word, word_list):
-    """
-    User-submitted solution for the Word Ladder problem.
+    """User-submitted solution for the Word Ladder problem.
+
     Args:
         begin_word (str): The starting word.
         end_word (str): The target word.
@@ -40,8 +40,8 @@ def word_ladder_user(begin_word, end_word, word_list):
 
 
 def word_ladder_canonical(begin_word, end_word, word_list):
-    """
-    Canonical solution for the Word Ladder problem.
+    """Canonical solution for the Word Ladder problem.
+
     Args:
         begin_word (str): The starting word.
         end_word (str): The target word.

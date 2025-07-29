@@ -1,5 +1,6 @@
 import pytest
-from .solution import min_meeting_rooms, canonical_min_meeting_rooms
+
+from .solution import canonical_min_meeting_rooms, min_meeting_rooms
 
 
 @pytest.mark.parametrize(
@@ -12,7 +13,7 @@ from .solution import min_meeting_rooms, canonical_min_meeting_rooms
         ([[1, 10], [2, 3], [4, 5], [6, 7], [8, 9]], 2),
         ([[1, 2]], 1),
         ([[1, 5], [5, 10], [10, 15]], 1),
-    ]
+    ],
 )
 def test_min_meeting_rooms(intervals, expected):
     for solution in [min_meeting_rooms, canonical_min_meeting_rooms]:

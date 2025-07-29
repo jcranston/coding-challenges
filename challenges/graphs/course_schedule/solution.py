@@ -1,7 +1,7 @@
 def can_finish_courses_dfs(numCourses, prerequisites):
-    """
-    Canonical solution for the Course Schedule problem (reference
+    """Canonical solution for the Course Schedule problem (reference
     implementation) using DFS.
+
     Args:
         numCourses (int): Total number of courses.
         prerequisites (List[List[int]]): List of prerequisite pairs [a, b].
@@ -37,8 +37,8 @@ def can_finish_courses_dfs(numCourses, prerequisites):
 
 
 def can_finish_courses_bfs(numCourses, prerequisites):
-    """
-    BFS (Kahn's algorithm) solution for the Course Schedule problem.
+    """BFS (Kahn's algorithm) solution for the Course Schedule problem.
+
     Args:
         numCourses (int): Total number of courses.
         prerequisites (List[List[int]]): List of prerequisite pairs [a, b].

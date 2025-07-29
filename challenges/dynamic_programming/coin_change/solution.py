@@ -1,6 +1,6 @@
 def coin_change_user(coins, amount):
-    """
-    User-submitted solution for the Coin Change problem (top down).
+    """User-submitted solution for the Coin Change problem (top down).
+
     Args:
         coins (List[int]): The list of coin denominations.
         amount (int): The total amount to make up.
@@ -25,8 +25,8 @@ def coin_change_user(coins, amount):
 
 
 def coin_change_canonical(coins, amount):
-    """
-    Canonical solution for the Coin Change problem (bottom up).
+    """Canonical solution for the Coin Change problem (bottom up).
+
     Args:
         coins (List[int]): The list of coin denominations.
         amount (int): The total amount to make up.

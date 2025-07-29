@@ -4,10 +4,8 @@ from typing import List, Tuple
 def longest_increasing_subsequence_quadratic(
     nums: List[int],
 ) -> Tuple[int, List[int]]:
-    """
-    Returns the length and one actual longest increasing subsequence using
-    O(n^2) DP.
-    """
+    """Returns the length and one actual longest increasing subsequence using
+    O(n^2) DP."""
     if not nums:
         return 0, []
     n = len(nums)
@@ -36,10 +34,8 @@ def longest_increasing_subsequence_quadratic(
 def longest_increasing_subsequence_optimized(
     nums: List[int],
 ) -> Tuple[int, List[int]]:
-    """
-    Returns the length and one actual longest increasing subsequence using
-    O(n log n) method.
-    """
+    """Returns the length and one actual longest increasing subsequence using
+    O(n log n) method."""
     if not nums:
         return 0, []
     n = len(nums)

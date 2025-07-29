@@ -2,8 +2,8 @@ from collections import defaultdict
 
 
 def user_subarray_sum_equals_k(nums, k):
-    """
-    User-submitted solution for the Subarray Sum Equals K problem.
+    """User-submitted solution for the Subarray Sum Equals K problem.
+
     Args:
         nums (List[int]): List of integers (can be negative, zero, or positive).
         k (int): Target sum for subarrays.
@@ -25,9 +25,9 @@ def user_subarray_sum_equals_k(nums, k):
 
 
 def canonical_subarray_sum_equals_k(nums, k):
-    """
-    Canonical solution for the Subarray Sum Equals K problem using prefix sums
-    and a hash map.
+    """Canonical solution for the Subarray Sum Equals K problem using prefix
+    sums and a hash map.
+
     Args:
         nums (List[int]): List of integers (can be negative, zero, or positive).
         k (int): Target sum for subarrays.

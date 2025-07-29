@@ -1,19 +1,14 @@
-"""
-Longest Common Subsequence solutions.
+"""Longest Common Subsequence solutions.
 
-This module provides both user and canonical implementations using
-top-down (memoization) and bottom-up (tabulation) dynamic programming
-approaches.
+This module provides both user and canonical implementations using top-down
+(memoization) and bottom-up (tabulation) dynamic programming approaches.
 """
 
 from typing import Dict, Tuple
 
 
-def longest_common_subsequence_user_top_down(
-    text1: str, text2: str
-) -> int:
-    """
-    User implementation of LCS using top-down dynamic programming with
+def longest_common_subsequence_user_top_down(text1: str, text2: str) -> int:
+    """User implementation of LCS using top-down dynamic programming with
     memoization.
 
     Args:
@@ -44,7 +39,7 @@ def longest_common_subsequence_user_top_down(
         else:
             result = max(
                 rec_lcs(i - 1, j),  # skip char in text1
-                rec_lcs(i, j - 1)   # skip char in text2
+                rec_lcs(i, j - 1),  # skip char in text2
             )
 
         memo[i][j] = result
@@ -53,11 +48,8 @@ def longest_common_subsequence_user_top_down(
     return rec_lcs(m, n)
 
 
-def longest_common_subsequence_user_bottom_up(
-    text1: str, text2: str
-) -> int:
-    """
-    User implementation of LCS using bottom-up dynamic programming with
+def longest_common_subsequence_user_bottom_up(text1: str, text2: str) -> int:
+    """User implementation of LCS using bottom-up dynamic programming with
     tabulation.
 
     Args:
@@ -77,7 +69,7 @@ def longest_common_subsequence_user_bottom_up(
             else:
                 memo[idx1][idx2] = max(
                     memo[idx1 - 1][idx2],  # remove char from word1
-                    memo[idx1][idx2 - 1]   # remove char from word2
+                    memo[idx1][idx2 - 1],  # remove char from word2
                 )
 
     return memo[m][n]
@@ -86,8 +78,7 @@ def longest_common_subsequence_user_bottom_up(
 def longest_common_subsequence_canonical_top_down(
     text1: str, text2: str
 ) -> int:
-    """
-    Canonical implementation of LCS using top-down dynamic programming with
+    """Canonical implementation of LCS using top-down dynamic programming with
     memoization.
 
     This is the standard recursive approach with memoization to avoid
@@ -126,8 +117,7 @@ def longest_common_subsequence_canonical_top_down(
 def longest_common_subsequence_canonical_bottom_up(
     text1: str, text2: str
 ) -> int:
-    """
-    Canonical implementation of LCS using bottom-up dynamic programming with
+    """Canonical implementation of LCS using bottom-up dynamic programming with
     tabulation.
 
     This is the standard iterative approach that builds the solution

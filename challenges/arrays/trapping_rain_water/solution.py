@@ -2,8 +2,8 @@ from typing import List
 
 
 def trapping_rain_water_user(height: List[int]) -> int:
-    """
-    User-submitted solution for the Trapping Rain Water problem.
+    """User-submitted solution for the Trapping Rain Water problem.
+
     Args:
         height (List[int]): List of non-negative integers representing elevation
         map.
@@ -36,9 +36,9 @@ def trapping_rain_water_user(height: List[int]) -> int:
 
 
 def trapping_rain_water_canonical(height: List[int]) -> int:
-    """
-    Canonical solution for the Trapping Rain Water problem using the two-pointer
-    approach.
+    """Canonical solution for the Trapping Rain Water problem using the two-
+    pointer approach.
+
     Args:
         height (List[int]): List of non-negative integers representing elevation
         map.

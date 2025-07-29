@@ -3,15 +3,13 @@ import heapq
 
 class MedianFinder:
     def __init__(self):
-        """
-        Initialize your data structure here.
-        """
+        """Initialize your data structure here."""
         self.low = []  # max heap for lower half of numbers
         self.high = []  # min hea for upper half of numbers
 
     def add_num(self, num):
-        """
-        Adds a number into the data structure.
+        """Adds a number into the data structure.
+
         Args:
             num (int): The number to add.
         """
@@ -28,8 +26,8 @@ class MedianFinder:
         # if lower heap has more elems
 
     def find_median(self):
-        """
-        Returns the median of all elements so far.
+        """Returns the median of all elements so far.
+
         Returns:
             float: The median value.
         """

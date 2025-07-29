@@ -1,6 +1,5 @@
 def climbing_stairs(n: int) -> int:
-    """
-    Returns the number of distinct ways to climb to the top of a staircase
+    """Returns the number of distinct ways to climb to the top of a staircase
     with n steps, where you can take either 1 or 2 steps at a time.
 
     Args:

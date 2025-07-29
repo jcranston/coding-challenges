@@ -3,8 +3,8 @@ from typing import List, Tuple
 
 
 def user_num_islands(grid):
-    """
-    User-submitted solution for the Number of Islands problem.
+    """User-submitted solution for the Number of Islands problem.
+
     Args:
         grid (List[List[str]]): 2D grid map of '1's (land) and '0's (water).
     Returns:
@@ -47,9 +47,9 @@ def user_num_islands(grid):
 
 
 def canonical_num_islands(grid):
-    """
-    Canonical solution for the Number of Islands problem (reference
+    """Canonical solution for the Number of Islands problem (reference
     implementation).
+
     Args:
         grid (List[List[str]]): 2D grid map of '1's (land) and '0's (water).
     Returns:

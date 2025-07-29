@@ -2,8 +2,8 @@ from typing import List
 
 
 def solve(nums: List[int], target: int) -> List[int]:
-    """
-    Returns indices of the two numbers such that they add up to target.
+    """Returns indices of the two numbers such that they add up to target.
+
     Assumes exactly one solution exists.
     """
     num_to_index = {}

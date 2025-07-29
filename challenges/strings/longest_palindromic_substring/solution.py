@@ -24,10 +24,8 @@ def longest_palindromic_substring(s: str) -> str:
 
 
 def longest_palindromic_substring_user_attempt(s: str) -> str:
-    """
-    User's original attempt: Finds the longest palindromic substring in s by
-    expanding around each center, handling odd and even cases separately.
-    """
+    """User's original attempt: Finds the longest palindromic substring in s by
+    expanding around each center, handling odd and even cases separately."""
     if not s:
         return ""
     n = len(s)

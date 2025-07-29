@@ -2,9 +2,9 @@ from typing import List
 
 
 def longest_consecutive_sequence_user(nums: List[int]) -> int:
-    """
-    User-submitted solution for finding the length of the longest consecutive
+    """User-submitted solution for finding the length of the longest consecutive
     sequence in an unsorted array.
+
     Args:
         nums (List[int]): The input array of integers.
     Returns:
@@ -27,9 +27,9 @@ def longest_consecutive_sequence_user(nums: List[int]) -> int:
 
 
 def longest_consecutive_sequence_canonical(nums: List[int]) -> int:
-    """
-    Canonical solution for finding the length of the longest consecutive
+    """Canonical solution for finding the length of the longest consecutive
     sequence in an unsorted array.
+
     Args:
         nums (List[int]): The input array of integers.
     Returns:

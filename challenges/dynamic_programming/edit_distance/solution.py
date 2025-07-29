@@ -1,8 +1,6 @@
 def edit_distance_user_bottom_up(word1: str, word2: str) -> int:
-    """
-    User implementation for computing the edit distance between two words,
-    using bottom-up dynamic programming approach with tabulation.
-    """
+    """User implementation for computing the edit distance between two words,
+    using bottom-up dynamic programming approach with tabulation."""
     m, n = len(word1), len(word2)
     dp = [[0] * (n + 1) for _ in range(m + 1)]
 
@@ -18,23 +16,20 @@ def edit_distance_user_bottom_up(word1: str, word2: str) -> int:
                 dp[i][j] = dp[i - 1][j - 1]
             else:
                 dp[i][j] = 1 + min(
-                    dp[i - 1][j],     # delete
-                    dp[i][j - 1],     # insert
-                    dp[i - 1][j - 1]  # replace
+                    dp[i - 1][j],  # delete
+                    dp[i][j - 1],  # insert
+                    dp[i - 1][j - 1],  # replace
                 )
 
     return dp[m][n]
 
 
 def edit_distance_user_top_down(word1: str, word2: str) -> int:
-    """
-    User implementation for computing the edit distance between two words,
-    using the top down recursive approach with memoization.
-    """
+    """User implementation for computing the edit distance between two words,
+    using the top down recursive approach with memoization."""
     sentinel = -1
     memo = [
-        [sentinel for _ in range(len(word2) + 1)]
-        for _ in range(len(word1) + 1)
+        [sentinel for _ in range(len(word2) + 1)] for _ in range(len(word1) + 1)
     ]
 
     def rec_edit_distance(s1_idx, s2_idx) -> int:
@@ -55,7 +50,7 @@ def edit_distance_user_top_down(word1: str, word2: str) -> int:
                 result = 1 + min(
                     rec_edit_distance(s1_idx - 1, s2_idx),  # delete
                     rec_edit_distance(s1_idx, s2_idx - 1),  # insert
-                    rec_edit_distance(s1_idx - 1, s2_idx - 1)  # replace
+                    rec_edit_distance(s1_idx - 1, s2_idx - 1),  # replace
                 )
 
         memo[s1_idx][s2_idx] = result
@@ -65,10 +60,8 @@ def edit_distance_user_top_down(word1: str, word2: str) -> int:
 
 
 def edit_distance_canonical_bottom_up(word1: str, word2: str) -> int:
-    """
-    Canonical bottom-up solution for computing the edit distance between two
-    words.
-    """
+    """Canonical bottom-up solution for computing the edit distance between two
+    words."""
     m, n = len(word1), len(word2)
 
     # Create DP table with base cases
@@ -87,19 +80,17 @@ def edit_distance_canonical_bottom_up(word1: str, word2: str) -> int:
                 dp[i][j] = dp[i - 1][j - 1]  # No operation needed
             else:
                 dp[i][j] = 1 + min(
-                    dp[i - 1][j],     # Delete character from word1
-                    dp[i][j - 1],     # Insert character into word1
-                    dp[i - 1][j - 1]  # Replace character in word1
+                    dp[i - 1][j],  # Delete character from word1
+                    dp[i][j - 1],  # Insert character into word1
+                    dp[i - 1][j - 1],  # Replace character in word1
                 )
 
     return dp[m][n]
 
 
 def edit_distance_canonical_top_down(word1: str, word2: str) -> int:
-    """
-    Canonical top-down solution for computing the edit distance between two
-    words.
-    """
+    """Canonical top-down solution for computing the edit distance between two
+    words."""
     m, n = len(word1), len(word2)
 
     # Create memoization table
@@ -123,9 +114,9 @@ def edit_distance_canonical_top_down(word1: str, word2: str) -> int:
             memo[i][j] = dp(i - 1, j - 1)  # No operation needed
         else:
             memo[i][j] = 1 + min(
-                dp(i - 1, j),     # Delete character from word1
-                dp(i, j - 1),     # Insert character into word1
-                dp(i - 1, j - 1)  # Replace character in word1
+                dp(i - 1, j),  # Delete character from word1
+                dp(i, j - 1),  # Insert character into word1
+                dp(i - 1, j - 1),  # Replace character in word1
             )
 
         return memo[i][j]

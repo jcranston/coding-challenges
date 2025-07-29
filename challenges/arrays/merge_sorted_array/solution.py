@@ -2,8 +2,8 @@ from typing import List
 
 
 def merge(nums1: List[int], m: int, nums2: List[int], n: int) -> None:
-    """
-    Merges nums2 into nums1 as one sorted array in-place.
+    """Merges nums2 into nums1 as one sorted array in-place.
+
     Modifies nums1 directly.
     """
     p1 = m - 1

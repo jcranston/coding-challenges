@@ -1,7 +1,5 @@
 def solve_recursive(s: str) -> bool:
-    """
-    Recursive solution to check if the parentheses string is valid.
-    """
+    """Recursive solution to check if the parentheses string is valid."""
     if len(s) == 0:
         return True
     if len(s) % 2 == 1:
@@ -20,10 +18,8 @@ def solve_recursive(s: str) -> bool:
 
 
 def solve_iterative(s: str) -> bool:
-    """
-    Iterative (stack-based) solution to check if the parentheses string is
-    valid.
-    """
+    """Iterative (stack-based) solution to check if the parentheses string is
+    valid."""
     stack = []
     matches = {"]": "[", ")": "(", "}": "{"}
     for ch in s:

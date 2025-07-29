@@ -5,8 +5,7 @@ from typing import List
 def median_of_two_sorted_arrays_user(
     nums1: List[int], nums2: List[int]
 ) -> float:
-    """
-    User implementation for finding the median of two sorted arrays.
+    """User implementation for finding the median of two sorted arrays.
 
     Take i elems from nums1 and j elems from nums2 such that
     i + j = (m + n + 1) // 2
@@ -48,7 +47,5 @@ def median_of_two_sorted_arrays_user(
 def median_of_two_sorted_arrays_canonical(
     nums1: List[int], nums2: List[int]
 ) -> float:
-    """
-    Canonical solution for finding the median of two sorted arrays.
-    """
+    """Canonical solution for finding the median of two sorted arrays."""
     pass

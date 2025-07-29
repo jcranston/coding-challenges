@@ -8,9 +8,7 @@ class TrieNode:
 
 
 class TrieUser:
-    """
-    User implementation of a Trie (Prefix Tree).
-    """
+    """User implementation of a Trie (Prefix Tree)."""
 
     def __init__(self):
         self.root = TrieNode(is_end=False)
@@ -46,9 +44,7 @@ class TrieUser:
 
 
 class TrieCanonical:
-    """
-    Canonical solution of a Trie (Prefix Tree).
-    """
+    """Canonical solution of a Trie (Prefix Tree)."""
 
     def __init__(self):
         pass

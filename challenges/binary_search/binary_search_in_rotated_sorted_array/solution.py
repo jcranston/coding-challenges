@@ -1,6 +1,6 @@
 def binary_search_in_rotated_sorted_array_user(nums, target):
-    """
-    User-submitted solution for binary search in rotated sorted array.
+    """User-submitted solution for binary search in rotated sorted array.
+
     Args:
         nums (List[int]): The rotated sorted array.
         target (int): The value to search for.
@@ -31,8 +31,8 @@ def binary_search_in_rotated_sorted_array_user(nums, target):
 
 
 def binary_search_in_rotated_sorted_array_canonical(nums, target):
-    """
-    Canonical solution for binary search in rotated sorted array.
+    """Canonical solution for binary search in rotated sorted array.
+
     Args:
         nums (List[int]): The rotated sorted array.
         target (int): The value to search for.

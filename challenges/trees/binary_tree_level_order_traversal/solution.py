@@ -3,9 +3,7 @@ from typing import Dict, List, Optional
 
 
 class TreeNode:
-    """
-    Definition for a binary tree node.
-    """
+    """Definition for a binary tree node."""
 
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -16,10 +14,8 @@ class TreeNode:
 def binary_tree_level_order_traversal_dfs(
     root: Optional[TreeNode],
 ) -> List[List[int]]:
-    """
-    Returns the level order traversal of a binary tree's nodes' values using
-    recursive DFS.
-    """
+    """Returns the level order traversal of a binary tree's nodes' values using
+    recursive DFS."""
     level_to_vals = defaultdict(list)
     _dfs_collect_levels(root, level_to_vals, 0)
     return [level_to_vals[level] for level in sorted(level_to_vals)]
@@ -38,10 +34,8 @@ def _dfs_collect_levels(
 def binary_tree_level_order_traversal_bfs(
     root: Optional[TreeNode],
 ) -> List[List[int]]:
-    """
-    Returns the level order traversal of a binary tree's nodes' values using
-    queue-based BFS.
-    """
+    """Returns the level order traversal of a binary tree's nodes' values using
+    queue-based BFS."""
     if root is None:
         return []
     q = deque([root])

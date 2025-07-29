@@ -2,9 +2,9 @@ from collections import deque
 
 
 def longest_subarray_with_sum_at_most_k(nums, k):
-    """
-    Canonical solution for finding the length of the longest contiguous
+    """Canonical solution for finding the length of the longest contiguous
     subarray whose sum is less than or equal to k.
+
     Args:
         nums (List[int]): The list of integers.
         k (int): The maximum allowed sum for the subarray.

@@ -1,6 +1,6 @@
 def minimum_window_subsequence_user(s1: str, s2: str):
-    """
-    User-submitted solution for the minimum window subsequence problem.
+    """User-submitted solution for the minimum window subsequence problem.
+
     Args:
         s1 (str): The source string.
         s2 (str): The target subsequence string.
@@ -47,8 +47,8 @@ def minimum_window_subsequence_user(s1: str, s2: str):
 
 
 def minimum_window_subsequence_canonical(s1, s2):
-    """
-    Canonical solution for the minimum window subsequence problem.
+    """Canonical solution for the minimum window subsequence problem.
+
     Args:
         s1 (str): The source string.
         s2 (str): The target subsequence string.

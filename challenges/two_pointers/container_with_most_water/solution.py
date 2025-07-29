@@ -2,8 +2,7 @@ from typing import List
 
 
 def find_max_water_container_area(height: List[int]) -> int:
-    """
-    Find the maximum area of water that can be contained between two vertical
+    """Find the maximum area of water that can be contained between two vertical
     lines.
 
     This function uses a two-pointer approach to efficiently find the maximum

@@ -2,8 +2,7 @@ from typing import List
 
 
 def max_profit(prices: List[int]) -> int:
-    """
-    Returns the maximum profit from a single buy and sell of stock given
+    """Returns the maximum profit from a single buy and sell of stock given
     daily prices. If no profit is possible, returns 0.
 
     Args:

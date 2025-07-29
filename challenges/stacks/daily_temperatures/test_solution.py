@@ -1,5 +1,6 @@
 import pytest
-from .solution import daily_temperatures, canonical_daily_temperatures
+
+from .solution import canonical_daily_temperatures, daily_temperatures
 
 
 @pytest.mark.parametrize(
@@ -12,7 +13,7 @@ from .solution import daily_temperatures, canonical_daily_temperatures
         ([30, 30, 30], [0, 0, 0]),
         ([90, 80, 70, 60], [0, 0, 0, 0]),
         ([60, 70, 80, 90], [1, 1, 1, 0]),
-    ]
+    ],
 )
 def test_daily_temperatures(temperatures, expected):
     for solution in [daily_temperatures, canonical_daily_temperatures]:

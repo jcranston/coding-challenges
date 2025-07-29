@@ -2,9 +2,9 @@ from collections import Counter, defaultdict
 
 
 def min_window_substring_user(s, t):
-    """
-    User-submitted solution for finding the minimum window substring of s
+    """User-submitted solution for finding the minimum window substring of s
     containing all characters of t.
+
     Args:
         s (str): The source string.
         t (str): The target string whose characters must all be present in the
@@ -43,9 +43,10 @@ def min_window_substring_user(s, t):
 
 
 def min_window_substring_canonical(s, t):
-    """
-    Canonical solution for finding the minimum window substring of s containing
-    all characters of t. Uses the sliding window technique with two pointers
+    """Canonical solution for finding the minimum window substring of s
+    containing all characters of t.
+
+    Uses the sliding window technique with two pointers
     and hash maps for character counts.
     Args:
         s (str): The source string.

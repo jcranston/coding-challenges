@@ -1,5 +1,6 @@
 import pytest
-from .solution import decode_string, canonical_decode_string
+
+from .solution import canonical_decode_string, decode_string
 
 
 @pytest.mark.parametrize(
@@ -13,7 +14,7 @@ from .solution import decode_string, canonical_decode_string
         ("2[3[a]b]", "aaabaaab"),
         ("", ""),
         ("a", "a"),
-    ]
+    ],
 )
 def test_decode_string(s, expected):
     for solution in [decode_string, canonical_decode_string]:

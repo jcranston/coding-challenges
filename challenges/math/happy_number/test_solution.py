@@ -1,5 +1,6 @@
 import pytest
-from .solution import is_happy, canonical_is_happy
+
+from .solution import canonical_is_happy, is_happy
 
 
 @pytest.mark.parametrize(
@@ -13,7 +14,7 @@ from .solution import is_happy, canonical_is_happy
         (100, True),
         (1111111, True),
         (0, False),
-    ]
+    ],
 )
 def test_is_happy(n, expected):
     for solution in [is_happy, canonical_is_happy]:

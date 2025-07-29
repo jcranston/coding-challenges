@@ -1,8 +1,8 @@
 from .solution import (
+    edit_distance_canonical_bottom_up,
+    edit_distance_canonical_top_down,
     edit_distance_user_bottom_up,
     edit_distance_user_top_down,
-    edit_distance_canonical_bottom_up,
-    edit_distance_canonical_top_down
 )
 
 # List of all methods to test
@@ -10,7 +10,7 @@ EDIT_DISTANCE_METHODS = [
     edit_distance_user_bottom_up,
     edit_distance_user_top_down,
     edit_distance_canonical_bottom_up,
-    edit_distance_canonical_top_down
+    edit_distance_canonical_top_down,
 ]
 
 
@@ -18,9 +18,9 @@ def assert_all_methods(word1: str, word2: str, expected: int):
     """Helper function to test all edit distance methods with the same
     inputs."""
     for method in EDIT_DISTANCE_METHODS:
-        assert method(word1, word2) == expected, (
-            f"Method {method.__name__} failed for '{word1}' -> '{word2}'"
-        )
+        assert (
+            method(word1, word2) == expected
+        ), f"Method {method.__name__} failed for '{word1}' -> '{word2}'"
 
 
 def test_edit_distance_basic():

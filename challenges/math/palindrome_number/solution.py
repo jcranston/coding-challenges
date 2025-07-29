@@ -1,6 +1,5 @@
 def palindrome_number(x: int) -> bool:
-    """
-    Returns True if x is a palindrome, False otherwise.
+    """Returns True if x is a palindrome, False otherwise.
 
     Args:
         x: The input integer.

@@ -9,11 +9,12 @@ def find_problem_dirs(base_dir="challenges"):
         if root == base_dir:
             continue
         # Skip hidden directories and pytest cache
-        dirs[:] = [d for d in dirs if not d.startswith('.') and
-                   d != '__pycache__']
+        dirs[:] = [
+            d for d in dirs if not d.startswith(".") and d != "__pycache__"
+        ]
         if "README.md" in files or "solution.py" in files:
             rel_path = os.path.relpath(root, base_dir)
-            if rel_path != "." and not rel_path.startswith('.pytest_cache'):
+            if rel_path != "." and not rel_path.startswith(".pytest_cache"):
                 problem_dirs.add(rel_path.replace(os.sep, "/"))
     return problem_dirs
 
@@ -23,8 +24,9 @@ def parse_tags_md(tags_path="challenges/tags.md"):
     with open(tags_path) as f:
         for line in f:
             # Skip header row and separator row
-            if (line.startswith("| Directory |") or
-                    line.startswith("|-----------")):
+            if line.startswith("| Directory |") or line.startswith(
+                "|-----------"
+            ):
                 continue
             m = re.match(r"\|\s*([a-zA-Z0-9_\/-]+)\s*\|", line)
             if m:

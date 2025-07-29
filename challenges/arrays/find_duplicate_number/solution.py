@@ -1,6 +1,6 @@
 def user_find_duplicate_number(nums):
-    """
-    User-submitted solution for the Find the Duplicate Number problem.
+    """User-submitted solution for the Find the Duplicate Number problem.
+
     Args:
         nums (List[int]): Array of n+1 integers where each integer is between 1
             and n (inclusive).
@@ -29,9 +29,9 @@ def user_find_duplicate_number(nums):
 
 
 def canonical_find_duplicate_number(nums):
-    """
-    Canonical solution for the Find the Duplicate Number problem (Floyd's
+    """Canonical solution for the Find the Duplicate Number problem (Floyd's
     Tortoise and Hare).
+
     Args:
         nums (List[int]): Array of n+1 integers where each integer is between 1
             and n (inclusive).

@@ -4,11 +4,47 @@
 
 All generated Python code (including stubs, tests, explanations, scripts, comments, and docstrings) must comply with flake8 linter requirements. The AI should automatically fix any linter errors in generated code before presenting or committing it, without asking the user for confirmation.
 
-**CRITICAL: Before presenting any code, manually verify that all lines respect the 80-character limit. Count characters or use a linter to check. This applies to function signatures, docstrings, and all other code.**
+**CRITICAL: Before presenting any code, manually verify that all lines respect the 80-character limit. Count characters or use a linter to check. This applies to function signatures, docstrings, and all other code.
+
+CRITICAL: Docstring formatting expectations:
+- Multi-line docstrings should wrap at 80 characters
+- First line should be a brief summary
+- Args/Returns sections should be properly indented
+- Use consistent spacing and line breaks
+- Example format:
+  ```python
+  def function_name(param1: str, param2: int) -> bool:
+      """Brief summary that wraps at 80 characters.
+      
+      Longer description if needed, also wrapped at 80 characters.
+      
+      Args:
+          param1: Description of first parameter
+          param2: Description of second parameter
+          
+      Returns:
+          Description of return value
+      """
+  ```**
 
 **CRITICAL: When referencing files or directories, always verify the exact path by checking the filesystem, including topic directories (e.g., `dynamic_programming/longest_common_subsequence`).**
 
 **CRITICAL: Always run the linter before presenting code to catch W293 (blank line contains whitespace), E261 (missing spaces before comments), and other common errors.**
+
+**CRITICAL: Do not automatically create commits unless the user explicitly asks for them. Present the changes and let the user decide when to commit.**
+
+**CRITICAL: Code formatting expectations:**
+- Use consistent spacing around operators (e.g., `i - 1` not `i-1`)
+- Use consistent spacing after commas in function calls and lists
+- Break long lines at logical points (operators, commas)
+- Use proper indentation for multi-line expressions
+- Example format:
+  ```python
+  result = max(
+      rec_lcs(i - 1, j),  # skip char in text1
+      rec_lcs(i, j - 1),  # skip char in text2
+  )
+  ```
 
 ### Critical Linting Rules (MUST FOLLOW)
 
@@ -83,6 +119,21 @@ def function2():
 **W293 - Blank line contains whitespace:**
 - Remove any spaces/tabs from blank lines
 - **CRITICAL: This is a very common error when generating code**
+
+**CRITICAL: Import formatting expectations:**
+- Imports should be sorted alphabetically
+- Group standard library imports first, then third-party, then local
+- Use consistent spacing and line breaks
+- Example format:
+  ```python
+  import os
+  import sys
+  from pathlib import Path
+  
+  from typing import List, Optional
+  
+  from .solution import function_name
+  ```
 
 **W503 - Line break before binary operator:**
 - Break lines after operators, not before

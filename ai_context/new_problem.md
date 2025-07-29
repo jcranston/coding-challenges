@@ -38,10 +38,19 @@ This file describes the step-by-step process for adding a new coding problem to 
    - If the problem fits multiple topics, pick the most relevant one.
 7. **Linting:**
    - Run the linter (e.g., `flake8`) and fix any issues before committing.
-   - **CRITICAL: Always run `make lint` before presenting or committing code to catch W293, E261, and other common errors.**
+   - **CRITICAL: Always run `make lint` before presenting or committing code to catch W293, E261, and other common errors.
+
+CRITICAL: Code formatting expectations for generated files:
+- Docstrings should wrap at 80 characters with proper indentation
+- Function signatures should respect 80-character limit
+- Imports should be sorted and properly grouped
+- Use consistent spacing around operators and after commas
+- Break long lines at logical points (operators, commas)
+- Follow the formatting patterns shown in existing files after `make format`**
    - **CRITICAL: Fix all linting errors before committing - do not present code with linting errors.**
 8. **Commit:**
-   - Commit your changes with a descriptive message.
+   - **CRITICAL: Do not automatically create commits unless the user explicitly asks for them.**
+   - When the user asks for a commit, use a descriptive message.
 
 ## File Generation Workflow
 

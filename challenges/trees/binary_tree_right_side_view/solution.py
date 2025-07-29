@@ -10,8 +10,8 @@ class TreeNode:
 
 
 def binary_tree_right_side_view_user(root: Optional[TreeNode]) -> List[int]:
-    """
-    User-submitted solution for the binary tree right side view problem.
+    """User-submitted solution for the binary tree right side view problem.
+
     Args:
         root (Optional[TreeNode]): The root of the binary tree.
     Returns:
@@ -43,8 +43,8 @@ def binary_tree_right_side_view_user(root: Optional[TreeNode]) -> List[int]:
 def binary_tree_right_side_view_canonical_bfs(
     root: Optional[TreeNode],
 ) -> List[int]:
-    """
-    Canonical BFS solution for the binary tree right side view problem.
+    """Canonical BFS solution for the binary tree right side view problem.
+
     Args:
         root (Optional[TreeNode]): The root of the binary tree.
     Returns:
@@ -78,8 +78,8 @@ def binary_tree_right_side_view_canonical_bfs(
 def binary_tree_right_side_view_canonical_dfs(
     root: Optional[TreeNode],
 ) -> List[int]:
-    """
-    Canonical DFS solution for the binary tree right side view problem.
+    """Canonical DFS solution for the binary tree right side view problem.
+
     Args:
         root (Optional[TreeNode]): The root of the binary tree.
     Returns:
