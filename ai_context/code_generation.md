@@ -31,11 +31,14 @@ All generated Python code (including stubs, tests, explanations, scripts, commen
 - Use `sed -i 's/[[:space:]]*$//' filename` to remove trailing whitespace
 - Check for W293 errors before presenting code
 
-CRITICAL: Docstring formatting expectations:
+**CRITICAL: Docstring formatting expectations:**
 - Multi-line docstrings should wrap at 80 characters
 - First line should be a brief summary
 - Args/Returns sections should be properly indented
 - Use consistent spacing and line breaks
+- **CRITICAL: When implementing solutions, maintain the existing docstring format or use the format that will pass docformatter.**
+- **CRITICAL: Single-line docstrings should remain single-line unless they exceed 80 characters.**
+- **CRITICAL: Multi-line docstrings should follow the docformatter rules (--wrap-summaries 80 --wrap-descriptions 80).**
 - Example format:
   ```python
   def function_name(param1: str, param2: int) -> bool:
@@ -254,6 +257,23 @@ def long_function_name(
 The project uses `.flake8` with:
 - `max-line-length = 80`
 - `extend-ignore = E203,E235,F401,F811,E741`
+
+**CRITICAL: Project Formatting Tools:**
+- **docformatter**: Formats docstrings with `--wrap-summaries 80 --wrap-descriptions 80`
+- **black**: Formats code with `line-length = 80`
+- **isort**: Sorts imports with `profile = "black"`
+
+**CRITICAL: When implementing solutions:**
+1. **Maintain existing docstring format** - Don't change single-line to multi-line unnecessarily
+2. **Follow docformatter rules** - If changing docstrings, ensure they pass docformatter
+3. **Run `make format` after implementation** - To catch any formatting issues
+4. **Check existing code style** - Match the formatting style of the existing codebase
+
+**CRITICAL: Common Formatting Errors:**
+- ❌ Changing single-line docstrings to multi-line unnecessarily
+- ❌ Not following docformatter's 80-character wrap rules
+- ❌ Inconsistent spacing in docstrings
+- ❌ Not running `make format` after implementation
 
 ### Application
 

@@ -63,6 +63,26 @@ This file lists common issues and troubleshooting steps for using AI tools (Curs
   - Run `make lint` and fix all errors before presenting code
   - Follow the formatting requirements in `ai_context/code_generation.md`
 
+### 10. Incorrect Test Cases
+- **Common Issues:**
+  - Test cases with multiple valid solutions when problem guarantees uniqueness
+  - Expected outputs that don't match manual calculations
+  - Test cases that violate problem constraints
+  - Comments that don't match expected behavior
+- **Solution:**
+  - **CRITICAL: Manually verify each test case by calculating the expected result**
+  - **CRITICAL: Check that test cases respect all problem constraints**
+  - **CRITICAL: Ensure test cases match problem guarantees (e.g., "exactly one solution")**
+  - **CRITICAL: Verify comments accurately describe the test case**
+  - **CRITICAL: Test edge cases that actually test boundary conditions**
+- **Validation Process:**
+  1. Read the problem statement carefully
+  2. Identify all constraints and guarantees
+  3. For each test case, manually calculate the expected result
+  4. Verify the calculation matches the expected output
+  5. Check that the test case doesn't violate any constraints
+  6. Ensure comments accurately describe the test
+
 ## For AI Assistants
 - If you encounter an issue not listed here, ask the user for clarification or suggest updating this file.
 

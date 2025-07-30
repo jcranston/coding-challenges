@@ -62,6 +62,16 @@ Please add a new LeetCode problem, likely to be asked in an interview, from the 
 - **CRITICAL: After creating files, run `make lint` and fix any errors before presenting the final code.**
 - **CRITICAL: The add_challenge.sh script creates directories at the root level. You MUST move them to the correct topic directory immediately.**
 - **CRITICAL: NEVER leave problems at the root level of challenges/ - always place them in their canonical topic subdirectory.**
+- **CRITICAL: When summarizing problems in chat, do NOT mention the solution technique (e.g., "two pointers", "sliding window", "dynamic programming"). Focus on problem characteristics, difficulty, and interview value without revealing the algorithm approach.**
+- **CRITICAL: The goal is to preserve independent problem-solving experience. Let users discover the solution technique themselves.**
+- **CRITICAL: All test cases must exactly match problem constraints and guarantees. Verify that inputs produce expected outputs according to problem rules.**
+- **CRITICAL: Double-check test case comments accurately describe expected behavior.**
+- **CRITICAL: For each test case, manually calculate the expected result to ensure correctness.**
+- **CRITICAL: Verify test cases don't have multiple valid solutions when the problem guarantees uniqueness.**
+- **CRITICAL: Ensure test cases respect all problem constraints (array size, value ranges, etc.).**
+- **CRITICAL: When implementing solutions, maintain existing docstring format or use format that passes docformatter.**
+- **CRITICAL: Run `make format` after implementing solutions to catch formatting issues.**
+- **CRITICAL: Use README header format "LeetCode #123: Problem Title" - do NOT use "LeetCode Problem:" after the number.**
 - If you are unsure about a step, ask the user or refer to the context files in this directory.
 
 ## For Users

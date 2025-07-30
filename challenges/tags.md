@@ -43,6 +43,7 @@
 | graphs/course_schedule | 207 | Course Schedule | depth-first search, breadth-first search, graph, topological sort |
 | graphs/number_of_provinces | 547 | Number of Provinces | graph, depth-first search, breadth-first search, union find |
 | two_pointers/minimum_window_subsequence | 727 | Minimum Window Subsequence | two pointers, dynamic programming, string |
+| two_pointers/pair_with_target_sum | 167 | Two Sum II - Input Array Is Sorted | array, two pointers, binary search |
 | two_pointers/container_with_most_water | 11 | Container With Most Water | two pointers, array, greedy |
 | intervals/merge_intervals | 56 | Merge Intervals | array, sorting, intervals |
 | intervals/meeting_rooms_ii | 253 | Meeting Rooms II | intervals, heap, sorting, greedy |

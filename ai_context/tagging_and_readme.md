@@ -11,9 +11,10 @@ This file describes the conventions for tagging, README formatting, and director
 
 ## README Format
 - Every problem README should start with:
-  - LeetCode number (if applicable): `**LeetCode #123**`
+  - LeetCode number and title (if applicable): `**LeetCode #123: Problem Title**`
   - Tags: `**Tags:** ...`
   - Problem title as a markdown header (e.g., `# Two Sum`)
+- **CRITICAL: Use format "LeetCode #123: Problem Title" - do NOT use "LeetCode Problem:" after the number.**
 - Use the following sections:
   - Problem
   - Examples

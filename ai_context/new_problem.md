@@ -20,6 +20,11 @@ This file describes the step-by-step process for adding a new coding problem to 
    - Import from `.solution` (e.g., `from .solution import ...`).
    - Do not ask the user if you should write out the test file—this is always required.
    - **CRITICAL: Test files should check for `None` results and skip assertions for unimplemented solutions.**
+   - **CRITICAL: All test cases must exactly match the problem constraints and guarantees.**
+   - **CRITICAL: Verify that test inputs produce the expected outputs according to the problem rules.**
+   - **CRITICAL: If the problem guarantees "exactly one solution", ensure test cases have exactly one valid solution.**
+   - **CRITICAL: If the problem requires exact matches (not approximations), ensure test cases reflect this.**
+   - **CRITICAL: Double-check that test case comments accurately describe the expected behavior.**
 4. **Update `README.md`:**
    - Use the following sections:
      - Problem
@@ -112,6 +117,10 @@ When generating a new LeetCode problem, the AI or script must always place the p
 - **CRITICAL: Always place problems in their canonical topic directory (e.g., dynamic programming problems in `dynamic_programming/`).**
 - **CRITICAL: When updating tags.md, verify the exact directory path by checking the filesystem, including the topic directory.**
 - **CRITICAL: Always run `make lint` before presenting code to catch W293, E261, and other common errors.**
+- **CRITICAL: The add_challenge.sh script creates directories at the root level. You MUST move them to the correct topic directory immediately.**
+- **CRITICAL: NEVER leave problems at the root level of challenges/ - always place them in their canonical topic subdirectory.**
+- **CRITICAL: When summarizing problems in chat, do NOT mention the solution technique (e.g., "two pointers", "sliding window", "dynamic programming"). Focus on problem characteristics, difficulty, and interview value without revealing the algorithm approach.**
+- **CRITICAL: The goal is to preserve independent problem-solving experience. Let users discover the solution technique themselves.**
 - If you are unsure about a step, ask the user or refer to other context files in `ai_context/`.
 
 ## For Users
@@ -168,4 +177,42 @@ def test_example():
     assert_all_methods(input_data, expected)
 ```
 
-This pattern is especially useful for problems with multiple solution approaches (e.g., top-down vs bottom-up DP, different algorithms, etc.). 
+This pattern is especially useful for problems with multiple solution approaches (e.g., top-down vs bottom-up DP, different algorithms, etc.).
+
+### Test Case Validation Requirements
+
+**CRITICAL: Before creating any test case, verify:**
+1. **Problem Constraints**: Does the test case respect all problem constraints (array size, value ranges, etc.)?
+2. **Problem Guarantees**: Does the test case match problem guarantees (e.g., "exactly one solution")?
+3. **Expected Output**: Does the expected output match what the problem requires?
+4. **Edge Cases**: Are edge cases handled according to problem specifications?
+5. **Comments Accuracy**: Do test case comments accurately describe the expected behavior?
+
+**Common Validation Checklist:**
+- ✅ Input constraints are respected (array length, value ranges)
+- ✅ Problem guarantees are satisfied (exact solutions vs approximations)
+- ✅ Expected outputs match problem requirements
+- ✅ Edge cases are handled correctly
+- ✅ Test case comments are accurate
+- ✅ No contradictions between test cases and problem statement
+
+**Example Validation Process:**
+1. Read the problem statement carefully
+2. Identify all constraints and guarantees
+3. Create test cases that respect these constraints
+4. Verify each test case produces the expected output
+5. Double-check comments match actual expected behavior
+
+**CRITICAL: Test Case Creation Process:**
+1. **Manual Verification**: For each test case, manually calculate the expected result
+2. **Constraint Checking**: Ensure the test case doesn't violate any problem constraints
+3. **Uniqueness Verification**: If the problem guarantees "exactly one solution", verify there's only one valid answer
+4. **Edge Case Testing**: Include edge cases that test boundary conditions
+5. **Comment Accuracy**: Ensure comments accurately describe what the test is checking
+
+**CRITICAL: Common Test Case Errors to Avoid:**
+- ❌ Test cases with multiple valid solutions when problem guarantees uniqueness
+- ❌ Expected outputs that don't match the actual calculation
+- ❌ Test cases that violate problem constraints
+- ❌ Comments that don't match the expected behavior
+- ❌ Edge cases that don't test the intended boundary conditions 
