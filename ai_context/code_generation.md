@@ -94,6 +94,13 @@ assert_result(obj.method_call(), expected_value, "method_name")
 
 **CRITICAL: For mathematical expressions in docstrings, comments, or documentation, use proper LaTeX notation (see `mathematical_formatting.md`).**
 
+**CRITICAL: Debugging Methodology - Always investigate before making changes:**
+- **Read files first** using `read_file` to see actual content
+- **Use `grep`** to find exact patterns before attempting changes
+- **Make targeted fixes** rather than multiple failed attempts
+- **Verify changes** with `make quality` after each modification
+- **Use `sed`** for precise line replacements when `search_replace` fails
+
 **CRITICAL: Code formatting expectations:**
 - Use consistent spacing around operators (e.g., `i - 1` not `i-1`)
 - Use consistent spacing after commas in function calls and lists

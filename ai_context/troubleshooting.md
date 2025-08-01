@@ -2,6 +2,71 @@
 
 This file lists common issues and troubleshooting steps for using AI tools (Cursor, Copilot, ChatGPT, etc.) with this project.
 
+## Debugging and Problem-Solving Methodology
+
+### CRITICAL: Methodical Approach to Fixes
+
+**Before making ANY changes, follow this order:**
+
+1. **Investigate First**
+   - Read the actual file content using `read_file`
+   - Use `grep` to find exact patterns: `grep -n "pattern" file.md`
+   - Check the specific lines causing issues
+   - Don't assume what the problem is
+
+2. **Identify the Real Problem**
+   - Look at error messages carefully
+   - Understand what's actually broken vs. what you think is broken
+   - Check if the issue is already fixed or doesn't exist
+
+3. **Make Targeted Changes**
+   - Fix one issue completely before moving to the next
+   - Use `sed` for precise line replacements when `search_replace` fails
+   - Make minimal, specific changes rather than broad attempts
+
+4. **Verify Immediately**
+   - Run `make quality` after each change
+   - Check if the change actually happened
+   - Don't repeat failed attempts - try a different approach
+
+### Common Debugging Patterns
+
+**For LaTeX/Markdown Issues:**
+```bash
+# Find exact content
+grep -n "pattern" file.md
+
+# Check specific lines
+read_file target_file.md start_line_one_indexed X end_line_one_indexed Y
+
+# Use sed for precise replacement
+sed -i 'line_number s/old/new/' file.md
+```
+
+**For Code Issues:**
+```bash
+# Run quality checks first
+make quality
+
+# Check specific errors
+make lint
+make test
+```
+
+### Anti-Patterns to Avoid
+
+**❌ DON'T:**
+- Make multiple failed `search_replace` attempts without investigating
+- Assume what the problem is without reading the file
+- Try to fix things that aren't broken
+- Make broad changes when specific ones are needed
+
+**✅ DO:**
+- Investigate thoroughly before making changes
+- Use the right tools for the job (`grep`, `sed`, `read_file`)
+- Make targeted, verified changes
+- Run quality checks after each change
+
 ## Common Issues
 
 ### 1. AI Ignores Conventions or Context Files

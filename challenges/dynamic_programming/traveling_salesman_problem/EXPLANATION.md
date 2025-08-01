@@ -290,7 +290,7 @@ For smaller instances or when memory is a concern, we can use backtracking:
 1. **Minimum Spanning Tree (MST) Lower Bound:**
    - Let $\texttt{MST}(G)$ be the cost of minimum spanning tree
    - Any tour must include all cities, so cost $\geq \texttt{MST}(G)$
-   - If current cost + $\texttt{MST}(\text{remaining}) > \texttt{best\_cost}$, prune
+   - If current cost + $\texttt{MST}(\texttt{remaining}) > \texttt{bestCost}$, prune
 
 2. **1-Tree Lower Bound:**
    - Remove one vertex, find MST, add back two cheapest edges
@@ -303,7 +303,7 @@ For smaller instances or when memory is a concern, we can use backtracking:
 **Mathematical Formulation:**
 - Let $L$ be the current partial tour cost
 - Let $\texttt{MST}(S)$ be the MST cost for remaining cities $S$
-- If $L + \texttt{MST}(S) \geq \texttt{best\_cost}$, prune this branch
+- If $L + \texttt{MST}(S) \geq \texttt{bestCost}$, prune this branch
 
 **Symmetry Breaking:**
 - Fix starting city to reduce search space by factor of $n$
@@ -413,7 +413,7 @@ distances = [
 - Maximize: $\sum_{i \in \texttt{tour}} p_i - \texttt{cost}(\texttt{tour})$
 
 **Mathematical Objective:**
-$$\max_{S \subseteq V} \left\{ \sum_{i \in S} p_i - \texttt{cost}(\texttt{cycle}(S)) \right\}$$
+$$\max_{S \subseteq V} { \sum_{i \in S} p_i - \texttt{cost}(\texttt{cycle}(S)) }$$
 where $\texttt{cycle}(S)$ is the minimum cost tour visiting cities in $S$
 
 ## Relevant Literature and Resources
