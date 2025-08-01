@@ -13,30 +13,35 @@ This file describes the step-by-step process for adding a new coding problem to 
    - Use snake_case for all function arguments and variable names.
    - **CRITICAL: Only create stubs (with `pass` statements) unless the user explicitly asks for implementations.**
    - If the user requests multiple approaches (e.g., "top-down and bottom-up"), create separate stub methods for each approach.
-   - **CRITICAL: Use separate classes for user and canonical solutions to allow comparison and different implementations.**
+   - **CRITICAL: Use separate functions for user and canonical solutions to allow comparison and different implementations.**
 
 **Proper Solution Structure Pattern:**
 
 ```python
-class UserSolution:
+def solve_user(param):
     """User's implementation of the problem."""
-    def method1(self, param):
-        """User's implementation."""
-        pass
+    pass
 
-class CanonicalSolution:
+def solve_canonical(param):
     """Canonical/reference implementation of the problem."""
-    def method1(self, param):
-        """Reference implementation."""
-        pass
+    pass
 
-def user_solution():
-    """User-submitted solution."""
-    return UserSolution()
+# For multiple approaches, use descriptive function names:
+def solve_user_top_down(param):
+    """User's top-down implementation."""
+    pass
 
-def canonical_solution():
-    """Canonical solution."""
-    return CanonicalSolution()
+def solve_user_bottom_up(param):
+    """User's bottom-up implementation."""
+    pass
+
+def solve_canonical_top_down(param):
+    """Canonical top-down implementation."""
+    pass
+
+def solve_canonical_bottom_up(param):
+    """Canonical bottom-up implementation."""
+    pass
 ```
 
 **Benefits of this pattern:**
@@ -44,6 +49,7 @@ def canonical_solution():
 - **Easy comparison** of different approaches
 - **Better learning** experience for users
 - **Follows project conventions** for most problems
+- **Simpler structure** - no unnecessary class overhead
 3. **Update `test_solution.py`:**
    - Always write out the full test file upon problem creation.
    - Use `pytest.mark.parametrize` to define multiple test cases.
@@ -217,35 +223,40 @@ This pattern is especially useful for problems with multiple solution approaches
 ```python
 import pytest
 
-def assert_result(result, expected, method_name=""):
-    """Helper function to check result and skip if not implemented.
-    
-    Args:
-        result: The result from the method call
-        expected: The expected value
-        method_name: Optional name for debugging
-    """
-    if result is None:
-        pytest.skip(f"Method {method_name} not implemented yet")
-    assert result == expected
+# List of all methods to test
+ALL_METHODS = [
+    solve_user,
+    solve_canonical,
+    # Add more methods as needed:
+    # solve_user_top_down,
+    # solve_user_bottom_up,
+    # solve_canonical_top_down,
+    # solve_canonical_bottom_up,
+]
 
-def test_example():
-    """Test example with clean assertions."""
-    for solution_func in [user_solution, canonical_solution]:
-        obj = solution_func()
-        if obj is None:
-            continue
-            
-        # Clean, readable test assertions
-        assert_result(obj.method_call(), expected_value, "method_name")
-        assert_result(obj.another_method(), another_expected, "another_method")
+def assert_all_methods(input_data, expected):
+    """Helper function to test all methods with the same inputs."""
+    for method in ALL_METHODS:
+        result = method(input_data)
+        if result is None:
+            continue  # Not implemented yet
+        assert result == expected, f"Method {method.__name__} failed"
+
+@pytest.mark.parametrize("input_data, expected", [
+    (test_case_1, expected_1),
+    (test_case_2, expected_2),
+])
+def test_problem_name(input_data, expected):
+    """Test all methods with various inputs."""
+    assert_all_methods(input_data, expected)
 ```
 
 **Benefits of this pattern:**
 - **Cleaner code**: No repetitive `if result is None: continue` blocks
-- **Better debugging**: `pytest.skip()` with method names for clarity
+- **Better debugging**: Clear method names in assertion messages
 - **Easier maintenance**: Single helper function handles all None checks
 - **Automatic cleanup**: When methods are implemented, tests automatically run without manual cleanup
+- **Consistent testing**: All methods are tested with the same inputs
 
 ### Test Case Validation Requirements
 
