@@ -13,6 +13,8 @@
 - **Problem Recap (first section):** Start with a brief summary of the problem in your own words, referencing the README and clarifying the main task and constraints.
 - **High-level approach:** Clearly describe the main idea and strategy for solving the problem.
 - **Step-by-step breakdown:** Explain the algorithm in detail, referencing indices, invariants, and key conditions (e.g., why `<` is used instead of `<=`).
+- **Mathematical formulations:** Include formal mathematical definitions, recurrence relations, and complexity analysis using proper LaTeX notation (see `mathematical_formatting.md`).
+- **Rigorous proofs:** For complex algorithms (especially dynamic programming, graph algorithms, optimization problems), include formal mathematical proofs of correctness, optimality, and complexity using proper theorem-proof structure.
 - **Annotated code:** If a canonical solution exists, reference and annotate it. If not, describe the expected approach in detail.
 - **Test cases:** Reference the provided test cases to illustrate edge cases and reasoning.
 - **Common pitfalls:** Discuss mistakes or misconceptions that often arise with this problem.
@@ -25,6 +27,9 @@
 - Always reference all available material in the problem directory: README, test cases, and solution code (if present).
 - **For simple problems, keep the explanation concise and avoid unnecessary complexity or length. Cover all required sections, but do not over-explain trivial logic.**
 - **Chat discussions about building intuition should remain in chat and not automatically trigger explanation file generation.**
+- **CRITICAL: Use proper LaTeX mathematical formatting for all formulas, complexity analysis, and mathematical expressions (see `mathematical_formatting.md`).**
+- **CRITICAL: Include formal mathematical definitions and recurrence relations where appropriate.**
+- **CRITICAL: For complex algorithms, include rigorous mathematical proofs using proper theorem-proof structure with lemmas, induction, and contradiction methods.**
 
 ## Example Prompts
 - "Generate an EXPLANATION.md for this problem, referencing the README, test cases, and any existing solution. Include citations to relevant literature."

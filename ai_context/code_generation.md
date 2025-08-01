@@ -92,6 +92,8 @@ def assert_result(result, expected, method_name=""):
 assert_result(obj.method_call(), expected_value, "method_name")
 ```
 
+**CRITICAL: For mathematical expressions in docstrings, comments, or documentation, use proper LaTeX notation (see `mathematical_formatting.md`).**
+
 **CRITICAL: Code formatting expectations:**
 - Use consistent spacing around operators (e.g., `i - 1` not `i-1`)
 - Use consistent spacing after commas in function calls and lists

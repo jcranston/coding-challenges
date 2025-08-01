@@ -42,6 +42,8 @@ This directory contains guidance, templates, and prompt context files for using 
 - `new_problem.md`: How to add a new problem (script, README, solution, tests, tags, etc.)
 - `leetcode_problem_mapping.md`: How to add LeetCode problems by number or name, with canonical mapping and README formatting rules. Use this for any LeetCode-sourced problem. This file supplements `new_problem.md`.
 - `tagging_and_readme.md`: Rules for tags, README format, and directory structure.
+- `mathematical_formatting.md`: LaTeX formatting guidelines for mathematical expressions, formulas, and complexity analysis in README and EXPLANATION files.
+- `rigorous_proofs.md`: Guidelines for including formal mathematical proofs in EXPLANATION files for complex algorithms.
 - `scripts_usage.md`: How and when to use project scripts.
 - `ai_prompt_examples.md`: Example prompts for AI tools to use.
 - `troubleshooting.md`: Common issues and how to resolve them.

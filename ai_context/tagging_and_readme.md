@@ -44,6 +44,8 @@ This file describes the conventions for tagging, README formatting, and director
 ## For AI Assistants
 - Always follow these conventions when generating or updating problems.
 - If unsure about a tag or format, ask the user or refer to this file.
+- **CRITICAL: For mathematical expressions and formulas, refer to `mathematical_formatting.md` for LaTeX formatting guidelines.**
+- **CRITICAL: Use proper LaTeX notation for variables, functions, and complexity analysis in both README and EXPLANATION files.**
 
 ## For Users
 - Reference this file when reviewing or updating problems.
