@@ -13,6 +13,37 @@ This file describes the step-by-step process for adding a new coding problem to 
    - Use snake_case for all function arguments and variable names.
    - **CRITICAL: Only create stubs (with `pass` statements) unless the user explicitly asks for implementations.**
    - If the user requests multiple approaches (e.g., "top-down and bottom-up"), create separate stub methods for each approach.
+   - **CRITICAL: Use separate classes for user and canonical solutions to allow comparison and different implementations.**
+
+**Proper Solution Structure Pattern:**
+
+```python
+class UserSolution:
+    """User's implementation of the problem."""
+    def method1(self, param):
+        """User's implementation."""
+        pass
+
+class CanonicalSolution:
+    """Canonical/reference implementation of the problem."""
+    def method1(self, param):
+        """Reference implementation."""
+        pass
+
+def user_solution():
+    """User-submitted solution."""
+    return UserSolution()
+
+def canonical_solution():
+    """Canonical solution."""
+    return CanonicalSolution()
+```
+
+**Benefits of this pattern:**
+- **Clear separation** between user and canonical implementations
+- **Easy comparison** of different approaches
+- **Better learning** experience for users
+- **Follows project conventions** for most problems
 3. **Update `test_solution.py`:**
    - Always write out the full test file upon problem creation.
    - Use `pytest.mark.parametrize` to define multiple test cases.
@@ -178,6 +209,43 @@ def test_example():
 ```
 
 This pattern is especially useful for problems with multiple solution approaches (e.g., top-down vs bottom-up DP, different algorithms, etc.).
+
+### Improved Test Structure Pattern
+
+**CRITICAL: Use the improved test structure pattern for cleaner, more maintainable tests:**
+
+```python
+import pytest
+
+def assert_result(result, expected, method_name=""):
+    """Helper function to check result and skip if not implemented.
+    
+    Args:
+        result: The result from the method call
+        expected: The expected value
+        method_name: Optional name for debugging
+    """
+    if result is None:
+        pytest.skip(f"Method {method_name} not implemented yet")
+    assert result == expected
+
+def test_example():
+    """Test example with clean assertions."""
+    for solution_func in [user_solution, canonical_solution]:
+        obj = solution_func()
+        if obj is None:
+            continue
+            
+        # Clean, readable test assertions
+        assert_result(obj.method_call(), expected_value, "method_name")
+        assert_result(obj.another_method(), another_expected, "another_method")
+```
+
+**Benefits of this pattern:**
+- **Cleaner code**: No repetitive `if result is None: continue` blocks
+- **Better debugging**: `pytest.skip()` with method names for clarity
+- **Easier maintenance**: Single helper function handles all None checks
+- **Automatic cleanup**: When methods are implemented, tests automatically run without manual cleanup
 
 ### Test Case Validation Requirements
 

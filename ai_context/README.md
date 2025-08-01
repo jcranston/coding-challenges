@@ -2,6 +2,23 @@
 
 This directory contains guidance, templates, and prompt context files for using AI (e.g., Cursor, Copilot, ChatGPT) to automate and standardize workflows in this codebase.
 
+## FIRST STEPS - MANDATORY FOR ALL AI ASSISTANTS
+
+**CRITICAL: Before starting ANY task, you MUST:**
+
+1. **Read this README.md file completely**
+2. **Read the relevant context files** for your specific task
+3. **Follow the MANDATORY WORKFLOW** in `ai_context/code_generation.md`
+4. **Always run `make quality`** before presenting any code
+
+**CRITICAL: The project has excellent tooling - USE IT:**
+- `make quality` - runs format + lint + test
+- `make format` - formats code properly
+- `make lint` - catches common errors
+- `make test` - ensures tests pass
+
+**CRITICAL: Never present code without running quality checks first.**
+
 ## Purpose
 - **Consistency:** Ensure all new problems, scripts, and documentation follow the same conventions.
 - **AI Assistance:** Provide clear, up-to-date instructions for AI tools to follow your preferred workflows.

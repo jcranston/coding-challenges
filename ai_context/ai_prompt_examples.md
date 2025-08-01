@@ -72,6 +72,9 @@ Please add a new LeetCode problem, likely to be asked in an interview, from the 
 - **CRITICAL: When implementing solutions, maintain existing docstring format or use format that passes docformatter.**
 - **CRITICAL: Run `make format` after implementing solutions to catch formatting issues.**
 - **CRITICAL: Use README header format "LeetCode #123: Problem Title" - do NOT use "LeetCode Problem:" after the number.**
+- **CRITICAL: Do NOT mention mathematical properties in README explanations (e.g., "squaring preserves order", "monotonic operation").**
+- **CRITICAL: Do NOT reveal solution techniques in example explanations or Notes section.**
+- **CRITICAL: Focus on problem characteristics, not solution approaches in READMEs.**
 - If you are unsure about a step, ask the user or refer to the context files in this directory.
 
 ## For Users

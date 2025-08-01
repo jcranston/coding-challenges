@@ -25,6 +25,10 @@ This file describes the conventions for tagging, README formatting, and director
 - **CRITICAL: The goal is interview preparation - allow independent problem-solving practice.**
 - **CRITICAL: Save detailed solution explanations for EXPLANATION.md files (only when explicitly requested).**
 - **CRITICAL: The "Notes" section should provide subtle hints without revealing algorithms (e.g., "Think about how to efficiently..." rather than "Use a hash map to...").**
+- **CRITICAL: Do NOT mention specific mathematical properties in explanations (e.g., "squaring preserves order", "monotonic operation", "negative vs positive behavior").**
+- **CRITICAL: Do NOT reveal solution techniques in example explanations (e.g., "two pointers", "sliding window", "binary search").**
+- **CRITICAL: Do NOT mention specific data structures or algorithms in the Notes section.**
+- **CRITICAL: Focus on problem characteristics and constraints, not solution approaches.**
 - Use clean, basic markdown formatting for readability.
 
 ## Directory Structure

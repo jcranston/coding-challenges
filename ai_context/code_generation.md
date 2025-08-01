@@ -1,5 +1,23 @@
 # Code Generation Policy
 
+## MANDATORY WORKFLOW - ALWAYS FOLLOW THIS ORDER
+
+**CRITICAL: Before presenting ANY code to the user, you MUST complete this workflow:**
+
+1. **Create/Edit the code** following project conventions
+2. **Run `make quality`** - this runs format + lint + test
+3. **Fix any issues** that `make quality` finds
+4. **Only present code** after `make quality` passes completely
+5. **If `make quality` fails, fix the issues and run it again**
+
+**CRITICAL: NEVER present code without running `make quality` first. This is MANDATORY.**
+
+**CRITICAL: If you cannot run `make quality` (e.g., in a restricted environment), manually:**
+- Run `make format` 
+- Run `make lint` and fix any errors
+- Run `make test` to ensure tests pass
+- Only then present the code
+
 ## Linter and Style Requirements
 
 All generated Python code (including stubs, tests, explanations, scripts, comments, and docstrings) must comply with flake8 linter requirements. The AI should automatically fix any linter errors in generated code before presenting or committing it, without asking the user for confirmation.
@@ -61,12 +79,32 @@ All generated Python code (including stubs, tests, explanations, scripts, commen
 
 **CRITICAL: Do not automatically create commits unless the user explicitly asks for them. Present the changes and let the user decide when to commit.**
 
+**CRITICAL: Use the improved test structure pattern for cleaner test files:**
+
+```python
+def assert_result(result, expected, method_name=""):
+    """Helper function to check result and skip if not implemented."""
+    if result is None:
+        pytest.skip(f"Method {method_name} not implemented yet")
+    assert result == expected
+
+# Use this pattern instead of repetitive if result is None: continue blocks
+assert_result(obj.method_call(), expected_value, "method_name")
+```
+
 **CRITICAL: Code formatting expectations:**
 - Use consistent spacing around operators (e.g., `i - 1` not `i-1`)
 - Use consistent spacing after commas in function calls and lists
 - Break long lines at logical points (operators, commas)
 - Use proper indentation for multi-line expressions
 - Example format:
+
+**CRITICAL: Solution file structure and docstring guidelines:**
+- **DO NOT include module docstrings in solution.py files** - the README already contains all problem details, LeetCode references, and constraints
+- **Solution files should focus purely on implementations** - avoid duplicating problem information
+- **Keep function docstrings** as they provide valuable context about the specific approach and implementation details
+- **Maintain clean separation of concerns**: README for problem description, solution.py for implementations, test_solution.py for verification
+- **Function docstrings should explain**: what the function does, the approach being used, and any key implementation insights
   ```python
   result = max(
       rec_lcs(i - 1, j),  # skip char in text1
@@ -275,6 +313,89 @@ The project uses `.flake8` with:
 - ❌ Inconsistent spacing in docstrings
 - ❌ Not running `make format` after implementation
 
+### Python Code Generation Guidelines (Black-Compatible)
+
+**CRITICAL: When generating Python code, follow these Black-compatible patterns:**
+
+#### Class Organization
+```python
+class MyClass:
+    # 1. Constants (UPPER_CASE)
+    DEFAULT_VALUE = 42
+    MAX_SIZE = 100
+    
+    # 2. Inner classes
+    class InnerClass:
+        def __init__(self):
+            pass
+    
+    # 3. Constructor
+    def __init__(self, param: str = "default"):
+        """Initialize the class.
+        
+        Args:
+            param: Description of parameter
+        """
+        self.param = param
+    
+    # 4. Private helper methods (alphabetical, prefixed with _)
+    def _calculate_something(self) -> float:
+        """Calculate something.
+        
+        Returns:
+            The calculated value
+        """
+        return 42.0
+    
+    # 5. Public interface methods (alphabetical)
+    def clear(self) -> None:
+        """Clear all data."""
+        pass
+    
+    def get(self, key: Any) -> Optional[Any]:
+        """Get value by key.
+        
+        Args:
+            key: The key to look up
+            
+        Returns:
+            The value or None if not found
+        """
+        pass
+```
+
+#### Import Organization
+```python
+# Standard library imports first
+from typing import Optional, Any, List, Dict
+
+# Third-party imports
+import numpy as np
+
+# Local imports
+from .utils import helper_function
+```
+
+#### Variable Naming
+- Use descriptive names
+- Avoid shadowing built-ins (e.g., use `next_node` not `next`)
+- Use consistent assignment spacing
+
+#### Type Hints
+- Always include type hints for function parameters and return values
+- Use `Optional[Type]` for nullable values
+- Use `Any` when type is truly unknown
+
+#### Data Structures
+- Use trailing commas in multi-line lists, dicts, tuples
+- Break long lines at 88 characters (Black's default)
+- Use consistent indentation
+
+#### Error Handling
+- Use specific exception types when possible
+- Include meaningful error messages
+- Re-raise exceptions when appropriate
+
 ### Application
 
 This policy applies to all code generated for:
@@ -284,4 +405,4 @@ This policy applies to all code generated for:
 - Project scripts and utilities
 - README files and markdown content
 
-Reference this file from any workflow or context file that involves code generation. 
+Reference this file from any workflow or context file that involves code generation.

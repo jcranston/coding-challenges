@@ -44,6 +44,7 @@
 | graphs/number_of_provinces | 547 | Number of Provinces | graph, depth-first search, breadth-first search, union find |
 | two_pointers/minimum_window_subsequence | 727 | Minimum Window Subsequence | two pointers, dynamic programming, string |
 | two_pointers/pair_with_target_sum | 167 | Two Sum II - Input Array Is Sorted | array, two pointers, binary search |
+| two_pointers/squaring_sorted_array | 977 | Squares of a Sorted Array | array, two pointers, sorting |
 | two_pointers/container_with_most_water | 11 | Container With Most Water | two pointers, array, greedy |
 | intervals/merge_intervals | 56 | Merge Intervals | array, sorting, intervals |
 | intervals/meeting_rooms_ii | 253 | Meeting Rooms II | intervals, heap, sorting, greedy |
@@ -63,6 +64,8 @@
 | stacks/daily_temperatures | 739 | Daily Temperatures | stack, array, monotonic stack |
 | stacks/decode_string | 394 | Decode String | stack, string, decoding |
 | design/lru_cache | 146 | LRU Cache | design, hash table, linked list, doubly linked list |
+| design/hashmap_implementation |  | Hashmap Implementation | design, hash table, data structures |
+| dynamic_programming/unique_paths | 62 | Unique Paths | dynamic programming, combinatorics, math |
 | linked_lists/reverse_linked_list | 206 | Reverse Linked List | linked list, two pointers, recursion |
 | trie/implement_trie | 208 | Implement Trie (Prefix Tree) | trie, design, hash table, string |
 | binary_search/sqrt_x | 69 | Sqrt(x) | math, binary search | 
